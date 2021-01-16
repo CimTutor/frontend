@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import movies from "./movies";
-import nominated from "./nominated";
+import code from "./code";
 
-export default combineReducers({ movies, nominated });
+export default combineReducers({ code });

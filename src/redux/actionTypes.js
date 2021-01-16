@@ -9,10 +9,7 @@ const createSymbols = (type, strings) =>
 
 const defaults = ["CREATE", "DELETE", "INDEX", "NEW", "SHOW", "UPDATE"];
 
-const actions = [
-  ["movies", []],
-  ["nominated", []],
-];
+const actions = [["code", []]];
 
 export default _.chain(actions)
   .map((action) => {
