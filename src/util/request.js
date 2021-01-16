@@ -2,9 +2,8 @@ import _ from "lodash";
 import axios from "axios";
 import qs from "qs";
 
-const baseUrl = "http://www.omdbapi.com";
-
-const apiKey = "&apikey=29dc1524";
+// TODO: Change this to point to our host
+const baseUrl = "http://localhost:5000/";
 
 const parseResponse = (response) => {
   const data = _.get(response, "data", {});
@@ -22,7 +21,7 @@ export const request = (method) => (query, options = {}) => {
 
   return axios({
     method,
-    url: `${baseUrl}/${query}${apiKey}`,
+    url: `${baseUrl}/${query}`,
     timeout: 60 * 1000,
     paramsSerializer: function (params) {
       return qs.stringify(params, { arrayFormat: "brackets" });

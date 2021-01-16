@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import { Grid, withStyles, Box } from "@material-ui/core/";
+import { Grid, withStyles, Box, Button } from "@material-ui/core/";
 import { connect } from "react-redux";
 
 import AppBar from "../components/styled/AppBar";
@@ -14,30 +14,28 @@ const styles = {
 };
 
 class LandingPage extends React.Component {
-  onSearch = async (name) => {
-    this.props.fetchMoviesByTitle(name);
+  onChange = (value) => {
+    this.props.updateCodeValue(value);
   };
 
-  componentDidMount() {
-    const url = new URL(window.location.href);
-    const params = url.searchParams.get("movieIds");
-
-    if (params) {
-      const movieIds = _.split(params, ",");
-      for (let i = 0; i < movieIds.length; i++) {
-        this.props.fetchMoviesSharableLink(movieIds[i]);
-      }
-    }
-  }
+  onSubmit = () => {
+    const { sendCodeToCompile, code } = this.props;
+    sendCodeToCompile(code);
+  };
 
   render() {
-    const { classes, movies, nominated } = this.props;
-    console.log(nominated);
+    const { classes, code } = this.props;
     return (
       <Grid>
-        <AppBar title="Shoppies" onSearch={this.onSearch} />
+        <AppBar title="Cim Tutor" onSearch={this.onSearch} />
         <Box className={classes.pageContainer}>
-          <CodeEditor />
+          <CodeEditor onChange={this.onChange} />
+        </Box>
+
+        <Box>
+          <Button variant="outlined" onClick={this.onSubmit}>
+            Submit
+          </Button>
         </Box>
       </Grid>
     );

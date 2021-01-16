@@ -1,24 +1,25 @@
 import actionTypes from "../actionTypes";
 import request from "../../util/request";
 
-// export const fetchMoviesSharableLink = (imdbID) => {
-//   return function (dispatch) {
-//     request
-//       .get(`?i=${imdbID}`)
-//       .then((data) => {
-//         dispatch({
-//           type: actionTypes.nominated.UPDATE,
-//           payload: data,
-//         });
-//       })
-//       .catch((error) =>
-//         dispatch({
-//           type: "",
-//           payload: error,
-//         })
-//       );
-//   };
-// };
+export const sendCodeToCompile = (code) => {
+  console.log("Sending Code: ", code);
+  return function (dispatch) {
+    request
+      .post("compile", { code: code })
+      .then((data) => {
+        dispatch({
+          type: actionTypes.code.UPDATE,
+          payload: data,
+        });
+      })
+      .catch((error) =>
+        dispatch({
+          type: "",
+          payload: error,
+        })
+      );
+  };
+};
 
 export const updateCodeValue = (code) => {
   return {

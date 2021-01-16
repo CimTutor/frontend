@@ -25,9 +25,6 @@ export default function AppBarWithSearch(props) {
           <Typography variant="h4" noWrap>
             {title}
           </Typography>
-          <Box ml="2rem">
-            <SearchBar onClick={onSearch} label="Search for Movies..." />
-          </Box>
         </Toolbar>
       </Box>
     </AppBar>
