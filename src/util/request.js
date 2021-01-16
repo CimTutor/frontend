@@ -3,7 +3,7 @@ import axios from "axios";
 import qs from "qs";
 
 // TODO: Change this to point to our host
-const baseUrl = "http://localhost:5000/";
+const baseUrl = "http://localhost:5000";
 
 const parseResponse = (response) => {
   const data = _.get(response, "data", {});

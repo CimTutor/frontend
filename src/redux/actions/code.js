@@ -5,7 +5,7 @@ export const sendCodeToCompile = (code) => {
   console.log("Sending Code: ", code);
   return function (dispatch) {
     request
-      .post("compile", { code: code })
+      .post("processCode", { data: { code: code } })
       .then((data) => {
         dispatch({
           type: actionTypes.code.UPDATE,
