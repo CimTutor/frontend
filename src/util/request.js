@@ -19,6 +19,8 @@ export const request = (method) => (query, options = {}) => {
     options.params = options.data;
   }
 
+  console.log("Method: " + method)
+
   return axios({
     method,
     url: `${baseUrl}/${query}`,
