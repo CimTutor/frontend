@@ -18,7 +18,7 @@ class CodeEditor extends React.Component {
         onChange={onChange}
         name="UNIQUE_ID_OF_DIV"
         editorProps={{ $blockScrolling: true }}
-        // value={value}
+        value={value}
       />
     );
   }

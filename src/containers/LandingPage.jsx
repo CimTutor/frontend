@@ -13,7 +13,30 @@ const styles = {
   },
 };
 
+const starterCode = `#include <cstdio>	
+#include <cstdlib>	
+#include <string>	
+#include "LoggerHelper.h"	
+#include "Logger.h"	
+#include "LinkedListNodes.h"	
+#include "TreeNodes.h"	
+
+
+using namespace std;	
+
+int main() {	
+  Logger l;	
+  LoggerHelper logger;	
+  logger.setLogger(l);	
+  //Add your code here
+  return 0;	
+}`;
+
 class LandingPage extends React.Component {
+  componentDidMount() {
+    this.props.updateCodeValue(starterCode);
+  }
+
   onChange = (value) => {
     this.props.updateCodeValue(value);
   };
@@ -29,7 +52,7 @@ class LandingPage extends React.Component {
       <Grid>
         <AppBar title="Cim Tutor" onSearch={this.onSearch} />
         <Box className={classes.pageContainer}>
-          <CodeEditor onChange={this.onChange} />
+          <CodeEditor onChange={this.onChange} value={code} />
         </Box>
 
         <Box>
