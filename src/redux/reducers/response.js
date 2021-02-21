@@ -1,15 +1,14 @@
 import _ from "lodash";
 import actionTypes from "../actionTypes";
 
-const codeReducer = ($$state = "", action) => {
+const responseReducer = ($$state = "", action) => {
   const { type, payload } = action;
   switch (type) {
-    case actionTypes.code.NEW:
-      return payload;
-    case actionTypes.code.SHOW:
+    case actionTypes.response.UPDATE:
+      return payload.creation;
     default:
       return $$state;
   }
 };
 
-export default codeReducer;
+export default responseReducer;

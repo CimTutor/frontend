@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.ace_marker {
+  position: absolute;
+  background: rgba(100, 200, 100, 0.5);
+}
