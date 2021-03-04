@@ -6,6 +6,7 @@ export const sendCodeToCompile = (code) => {
     request
       .post("processCode", { data: { code: code } })
       .then((data) => {
+        console.log(data);
         dispatch({
           type: actionTypes.response.UPDATE,
           payload: data,

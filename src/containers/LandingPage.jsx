@@ -18,7 +18,7 @@ import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
 import CodeEditor from "../components/styled/CodeEditor";
-import RenderingContainer from "../components/RenderingContainer";
+import RenderingContainer from "./RenderingContainer";
 import { STARTER_CODE } from "../constants/starterCode";
 
 const styles = {
