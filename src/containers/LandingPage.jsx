@@ -54,15 +54,15 @@ class LandingPage extends React.Component {
   };
 
   onRight = () => {
-    this.props.updateRenderState(
-      Math.min(this.props.render + 1, this.props.response.length - 1)
-    );
+    const { updateRenderState, response, render } = this.props;
+    let length = _.get(response, `states`, []).length;
+    updateRenderState(Math.min(render + 1, length - 1));
   };
 
   render() {
     const { classes, code, response, render } = this.props;
 
-    let currentState = (response && response[render]) || null;
+    let currentState = _.get(response, `states[${render}]`, null);
     let activeLine = null || (currentState && currentState[0]);
 
     return (
@@ -126,7 +126,7 @@ class LandingPage extends React.Component {
 
           <Grid item>
             <Box className={classes.pageContainer}>
-              <RenderingContainer />
+              <RenderingContainer response={response} step={render} />
             </Box>
           </Grid>
         </Grid>
