@@ -18,6 +18,7 @@ import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
 import CodeEditor from "../components/styled/CodeEditor";
+import SystemOutput from "../components/styled/SystemOutput";
 import RenderingContainer from "./RenderingContainer";
 import { STARTER_CODE } from "../constants/starterCode";
 
@@ -69,7 +70,7 @@ class LandingPage extends React.Component {
       <Grid>
         <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
         <Grid container justify="center" spacing={2}>
-          <Grid item>
+          <Grid item xs={12} sm={6}>
             <>
               <Box className={classes.pageContainer}>
                 <CodeEditor
@@ -77,6 +78,7 @@ class LandingPage extends React.Component {
                   value={code}
                   activeLine={activeLine}
                 />
+                <SystemOutput output={response.program_output}/>
               </Box>
               <AppBar
                 position="fixed"
@@ -124,7 +126,7 @@ class LandingPage extends React.Component {
             </>
           </Grid>
 
-          <Grid item>
+          <Grid item xs={12} sm={6}>
             <Box className={classes.pageContainer}>
               <RenderingContainer />
             </Box>
