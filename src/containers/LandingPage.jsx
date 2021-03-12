@@ -47,6 +47,7 @@ class LandingPage extends React.Component {
   onSubmit = () => {
     const { sendCodeToCompile, code } = this.props;
     sendCodeToCompile(code);
+    this.props.updateRenderState(0);
   };
 
   onLeft = () => {
