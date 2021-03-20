@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, withStyles, Box, Button, Paper } from "@material-ui/core/";
-import Graph from "react-graph-vis";
 
 const styles = {
   pageContainer: {
