@@ -19,12 +19,12 @@ import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
 import CodeEditor from "../components/styled/CodeEditor";
 import SystemOutput from "../components/styled/SystemOutput";
-import RenderingContainer from "./RenderingContainer";
+import RenderingContainer from "./rendering";
 import { STARTER_CODE } from "../constants/starterCode";
 
 const styles = {
   pageContainer: {
-    padding: "4rem",
+    padding: "8rem",
   },
   appBar: {
     top: "auto",
@@ -33,6 +33,9 @@ const styles = {
   flip: {
     "-webkit-transform": "scaleX(-1)",
     transform: "scaleX(-1)",
+  },
+  background: {
+    backgroundColor: "#f5f5f5",
   },
 };
 
@@ -48,6 +51,7 @@ class LandingPage extends React.Component {
   onSubmit = () => {
     const { sendCodeToCompile, code } = this.props;
     sendCodeToCompile(code);
+    this.props.updateRenderState(0);
   };
 
   onLeft = () => {
@@ -55,83 +59,85 @@ class LandingPage extends React.Component {
   };
 
   onRight = () => {
-    this.props.updateRenderState(
-      Math.min(this.props.render + 1, this.props.response.length - 1)
-    );
+    const { updateRenderState, response, render } = this.props;
+    let length = _.get(response, `states`, []).length;
+    updateRenderState(Math.min(render + 1, length - 1));
+  };
+
+  onDoubleRight = () => {
+    const { updateRenderState, response } = this.props;
+    let length = _.get(response, `states`, []).length;
+    updateRenderState(length - 1);
+  };
+
+  onDoubleLeft = () => {
+    this.props.updateRenderState(0);
   };
 
   render() {
     const { classes, code, response, render } = this.props;
 
-    let currentState = (response && response[render]) || null;
+    let currentState = _.get(response, `states[${render}]`, null);
     let activeLine = null || (currentState && currentState[0]);
 
     return (
-      <Grid>
+      <Grid className={classes.background}>
         <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
-        <Grid container justify="center" spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <>
-              <Box className={classes.pageContainer}>
-                <CodeEditor
-                  onChange={this.onChange}
-                  value={code}
-                  activeLine={activeLine}
-                />
-                <SystemOutput output={response.program_output}/>
-              </Box>
-              <AppBar
-                position="fixed"
-                color="primary"
-                className={classes.appBar}
-              >
-                <Box ml="4rem">
-                  <Toolbar>
-                    <IconButton
-                      edge="end"
-                      color="inherit"
-                      className={classes.flip}
-                    >
-                      <DoubleArrowIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={this.onLeft}
-                      edge="end"
-                      color="inherit"
-                    >
-                      <ChevronLeftIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={this.onRight}
-                      edge="end"
-                      color="inherit"
-                    >
-                      <ChevronRightIcon />
-                    </IconButton>
-                    <IconButton edge="end" color="inherit">
-                      <DoubleArrowIcon />
-                    </IconButton>
-                    <Box ml="4rem">
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={this.onSubmit}
-                      >
-                        Submit Code
-                      </Button>
-                    </Box>
-                  </Toolbar>
-                </Box>
-              </AppBar>
-            </>
+        <Grid container className={classes.pageContainer} spacing={2}>
+          <Grid item>
+            <Box>
+              <CodeEditor
+                onChange={this.onChange}
+                value={code}
+                activeLine={activeLine}
+              />
+            </Box>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
-            <Box className={classes.pageContainer}>
+          <Grid item xs={4}>
+            <Box ml="4rem">
               <RenderingContainer />
             </Box>
           </Grid>
         </Grid>
+
+        <AppBar position="fixed" color="primary" className={classes.appBar}>
+          <Box ml="4rem">
+            <Toolbar>
+              <IconButton
+                edge="end"
+                color="inherit"
+                className={classes.flip}
+                onClick={this.onDoubleLeft}
+              >
+                <DoubleArrowIcon />
+              </IconButton>
+              <IconButton onClick={this.onLeft} edge="end" color="inherit">
+                <ChevronLeftIcon />
+              </IconButton>
+              <IconButton onClick={this.onRight} edge="end" color="inherit">
+                <ChevronRightIcon />
+              </IconButton>
+              <IconButton
+                edge="end"
+                color="inherit"
+                onClick={this.onDoubleRight}
+              >
+                <DoubleArrowIcon />
+              </IconButton>
+
+              <Box ml="4rem">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={this.onSubmit}
+                >
+                  Submit Code
+                </Button>
+              </Box>
+            </Toolbar>
+          </Box>
+        </AppBar>
       </Grid>
     );
   }

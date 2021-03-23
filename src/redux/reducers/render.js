@@ -1,7 +1,7 @@
 import _ from "lodash";
 import actionTypes from "../actionTypes";
 
-const renderReducer = ($$state = 0, action) => {
+const renderReducer = ($$state = -1, action) => {
   const { type, payload } = action;
   switch (type) {
     case actionTypes.render.NEW:
