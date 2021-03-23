@@ -2,15 +2,8 @@ export const STARTER_CODE = `// This Test Script is for injection for array algo
 #include <cstdio>
 #include <cstdlib>
 #include <string>
-#include "LoggerHelper.h"
-#include "Logger.h"
-#include "LinkedListNodes.h"
-#include "TreeNodes.h"
 
 using namespace std;
-
-Logger l;
-LoggerHelper logger;
 
 void printIntegers() {
     int y  = 69;
@@ -20,7 +13,6 @@ void printIntegers() {
 }
 
 int main() {
-    logger.setLogger(l);
     //Add your code here
     IntegerTreeNode *intTreeNode1= new IntegerTreeNode(1);
     IntegerTreeNode *intTreeNode2 = new IntegerTreeNode(2);

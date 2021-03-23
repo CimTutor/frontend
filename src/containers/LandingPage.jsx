@@ -18,12 +18,12 @@ import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
 import CodeEditor from "../components/styled/CodeEditor";
-import RenderingContainer from "./RenderingContainer";
+import RenderingContainer from "./rendering";
 import { STARTER_CODE } from "../constants/starterCode";
 
 const styles = {
   pageContainer: {
-    padding: "4rem",
+    padding: "8rem",
   },
   appBar: {
     top: "auto",
@@ -32,6 +32,9 @@ const styles = {
   flip: {
     "-webkit-transform": "scaleX(-1)",
     transform: "scaleX(-1)",
+  },
+  background: {
+    backgroundColor: "#f5f5f5",
   },
 };
 
@@ -60,6 +63,16 @@ class LandingPage extends React.Component {
     updateRenderState(Math.min(render + 1, length - 1));
   };
 
+  onDoubleRight = () => {
+    const { updateRenderState, response } = this.props;
+    let length = _.get(response, `states`, []).length;
+    updateRenderState(length - 1);
+  };
+
+  onDoubleLeft = () => {
+    this.props.updateRenderState(0);
+  };
+
   render() {
     const { classes, code, response, render } = this.props;
 
@@ -67,70 +80,63 @@ class LandingPage extends React.Component {
     let activeLine = null || (currentState && currentState[0]);
 
     return (
-      <Grid>
+      <Grid className={classes.background}>
         <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
-        <Grid container justify="center" spacing={2}>
-          <Grid item>
-            <>
-              <Box className={classes.pageContainer}>
-                <CodeEditor
-                  onChange={this.onChange}
-                  value={code}
-                  activeLine={activeLine}
-                />
-              </Box>
-              <AppBar
-                position="fixed"
-                color="primary"
-                className={classes.appBar}
-              >
-                <Box ml="4rem">
-                  <Toolbar>
-                    <IconButton
-                      edge="end"
-                      color="inherit"
-                      className={classes.flip}
-                    >
-                      <DoubleArrowIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={this.onLeft}
-                      edge="end"
-                      color="inherit"
-                    >
-                      <ChevronLeftIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={this.onRight}
-                      edge="end"
-                      color="inherit"
-                    >
-                      <ChevronRightIcon />
-                    </IconButton>
-                    <IconButton edge="end" color="inherit">
-                      <DoubleArrowIcon />
-                    </IconButton>
-                    <Box ml="4rem">
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={this.onSubmit}
-                      >
-                        Submit Code
-                      </Button>
-                    </Box>
-                  </Toolbar>
-                </Box>
-              </AppBar>
-            </>
+        <Grid container className={classes.pageContainer} spacing={2}>
+          <Grid item xs={0}>
+            <Box>
+              <CodeEditor
+                onChange={this.onChange}
+                value={code}
+                activeLine={activeLine}
+              />
+            </Box>
           </Grid>
 
-          <Grid item>
-            <Box className={classes.pageContainer}>
-              <RenderingContainer response={response} step={render} />
+          <Grid item xs={4}>
+            <Box ml="4rem">
+              <RenderingContainer />
             </Box>
           </Grid>
         </Grid>
+
+        <AppBar position="fixed" color="primary" className={classes.appBar}>
+          <Box ml="4rem">
+            <Toolbar>
+              <IconButton
+                edge="end"
+                color="inherit"
+                className={classes.flip}
+                onClick={this.onDoubleLeft}
+              >
+                <DoubleArrowIcon />
+              </IconButton>
+              <IconButton onClick={this.onLeft} edge="end" color="inherit">
+                <ChevronLeftIcon />
+              </IconButton>
+              <IconButton onClick={this.onRight} edge="end" color="inherit">
+                <ChevronRightIcon />
+              </IconButton>
+              <IconButton
+                edge="end"
+                color="inherit"
+                onClick={this.onDoubleRight}
+              >
+                <DoubleArrowIcon />
+              </IconButton>
+
+              <Box ml="4rem">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={this.onSubmit}
+                >
+                  Submit Code
+                </Button>
+              </Box>
+            </Toolbar>
+          </Box>
+        </AppBar>
       </Grid>
     );
   }
