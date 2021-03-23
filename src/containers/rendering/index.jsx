@@ -66,6 +66,7 @@ class RenderingConatainer extends React.Component {
     this.state = {
       step: 0,
       data: {},
+      tab: 0,
     };
   }
 
@@ -81,10 +82,11 @@ class RenderingConatainer extends React.Component {
   };
 
   parseTree = (state, variables) => {
+    // TODO: make sure we show right and left, handle null children
     const name = _.get(variables, `${state.address}`, null);
     const children = [];
     const value = _.get(state, "value", null);
-    console.log("parse Tree", state, name, _.get(state, "children", []));
+    // console.log("parse Tree", state, name, _.get(state, "children", []));
 
     _.get(state, "children", []).forEach((child) => {
       children.push(this.parseTree(child, variables));
@@ -94,12 +96,22 @@ class RenderingConatainer extends React.Component {
   };
 
   parseLL = (state, variables) => {
-    console.log("parse ll", state);
+    const name = _.get(variables, `${state.address}`, null);
+    const children = [];
+    const value = _.get(state, "value", null);
+    console.log("parse LL", state, name, _.get(state, "children", []));
+
+    _.get(state, "children", []).forEach((child) => {
+      children.push(this.parseLL(child, variables));
+    });
+
+    return { name, attributes: { value }, children };
   };
 
   parseStates = (states, variables) => {
     console.log("Parse States", states);
     let res = [];
+    let var_nodes = [];
 
     states.forEach((state) => {
       const varT = _.get(state, "variable_type");
@@ -110,60 +122,64 @@ class RenderingConatainer extends React.Component {
         const s = this.parseTree(_.get(state, "states"), variables);
         res.push(s);
       } else {
+        var_nodes.push({
+          name: _.get(state, "name"),
+          type: _.get(state, "variable_type"),
+          value: _.get(state, "value"),
+        });
       }
     });
 
+    res.push({ type: "VARIABLES", data: var_nodes });
     return { res };
   };
 
   handleChange = (event, value) => {
-    this.setState({ value });
+    this.setState({ tab: value });
   };
 
   render() {
     const { classes, response } = this.props;
-    const { value } = this.state;
-    console.log(value);
+    const { tab } = this.state;
+    console.log(tab);
+
+    const states = _.get(
+      this.props.response,
+      `states[${this.props.render}][1]`,
+      []
+    );
+    const variables = _.get(this.props.response, `var_address`, {});
+    const { res } = this.parseStates(states, variables);
+    console.log("RES", res);
 
     return (
       <div className={classes.root}>
         <Tabs
           orientation="vertical"
           variant="scrollable"
-          value={value}
+          value={tab}
           onChange={this.handleChange}
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-          <Tab label="Item Four" {...a11yProps(3)} />
-          <Tab label="Item Five" {...a11yProps(4)} />
-          <Tab label="Item Six" {...a11yProps(5)} />
-          <Tab label="Item Seven" {...a11yProps(6)} />
+          {_.map(res, (v, i) => {
+            return (
+              <Tab
+                key={i}
+                label={v.name || v.type}
+                // inputProps={{ autoCapitalize: "none" }}
+                {...a11yProps(i)}
+              />
+            );
+          })}
         </Tabs>
-        <TabPanel value={value} index={0}>
-          <ComponentRender />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          Item Four
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          Item Five
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          Item Six
-        </TabPanel>
-        <TabPanel value={value} index={6}>
-          Item Seven
-        </TabPanel>
+        {_.map(res, (v, i) => {
+          return (
+            <TabPanel key={i} value={tab} index={i}>
+              <ComponentRender data={v} />
+            </TabPanel>
+          );
+        })}
       </div>
     );
   }

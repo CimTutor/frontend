@@ -83,7 +83,7 @@ class LandingPage extends React.Component {
       <Grid className={classes.background}>
         <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
         <Grid container className={classes.pageContainer} spacing={2}>
-          <Grid item xs={0}>
+          <Grid item>
             <Box>
               <CodeEditor
                 onChange={this.onChange}
