@@ -7,8 +7,8 @@ import Tree from "react-d3-tree";
 
 const GRAPH_ATTRIBUTES = {
   orientation: "vertical",
-  translateX: 100,
-  translateY: 100,
+  translateX: 350,
+  translateY: 50,
 };
 
 const styles = {
@@ -24,7 +24,7 @@ class ComponentRender extends React.Component {
     console.log(data);
 
     return (
-      <div id="treeWrapper" style={{ width: "50em", height: "25em" }}>
+      <div id="treeWrapper" style={{ width: "50em", height: "30em" }}>
         <Tree
           data={data}
           translate={{
