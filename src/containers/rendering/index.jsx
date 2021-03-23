@@ -99,7 +99,7 @@ class RenderingConatainer extends React.Component {
     const name = _.get(variables, `${state.address}`, null);
     const children = [];
     const value = _.get(state, "value", null);
-    console.log("parse LL", state, name, _.get(state, "children", []));
+    // console.log("parse LL", state, name, _.get(state, "children", []));
 
     _.get(state, "children", []).forEach((child) => {
       children.push(this.parseLL(child, variables));
@@ -109,7 +109,6 @@ class RenderingConatainer extends React.Component {
   };
 
   parseStates = (states, variables) => {
-    console.log("Parse States", states);
     let res = [];
     let var_nodes = [];
 
@@ -141,8 +140,6 @@ class RenderingConatainer extends React.Component {
   render() {
     const { classes, response } = this.props;
     const { tab } = this.state;
-    console.log(tab);
-
     const states = _.get(
       this.props.response,
       `states[${this.props.render}][1]`,
@@ -163,14 +160,7 @@ class RenderingConatainer extends React.Component {
           className={classes.tabs}
         >
           {_.map(res, (v, i) => {
-            return (
-              <Tab
-                key={i}
-                label={v.name || v.type}
-                // inputProps={{ autoCapitalize: "none" }}
-                {...a11yProps(i)}
-              />
-            );
+            return <Tab key={i} label={v.name || v.type} {...a11yProps(i)} />;
           })}
         </Tabs>
         {_.map(res, (v, i) => {
