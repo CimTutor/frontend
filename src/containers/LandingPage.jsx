@@ -91,6 +91,7 @@ class LandingPage extends React.Component {
                 value={code}
                 activeLine={activeLine}
               />
+              <SystemOutput output={response.program_output} />
             </Box>
           </Grid>
 
