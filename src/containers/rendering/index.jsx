@@ -72,12 +72,12 @@ class RenderingConatainer extends React.Component {
     }
   };
 
+  // not used, but will keep
   handleChange = (event, value) => {
     this.setState({ tab: value });
   };
 
   handleTreeClick = (value) => {
-    console.log("clicked on", value);
     this.setState({ tab: value });
   };
 
@@ -89,12 +89,9 @@ class RenderingConatainer extends React.Component {
       `states[${this.props.render}][1]`,
       []
     );
-    // console.log(this.state);
     const variables = _.get(this.props.response, `var_address`, {});
     const { res } = utils.parseStates(states, variables);
     const { contexts } = utils.parseStatesForMenu(states, variables);
-    console.log(contexts);
-    // console.log("RES", res);
 
     return (
       <div className={classes.root}>
@@ -106,14 +103,8 @@ class RenderingConatainer extends React.Component {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          {/* {_.map(res, (v, i) => {
-            return (
-              <Tab key={i} label={v.name || v.type} {...utils.a11yProps(i)} />
-            );
-          })} */}
           <Box style={{ width: "180px" }}>
             <ControlledTreeView
-              //   className={classes.treeTab}
               handleTreeClick={this.handleTreeClick}
               res={res}
               contexts={contexts}

@@ -37,8 +37,6 @@ class ControlledTreeView extends React.Component {
   render() {
     const { classes, res, contexts } = this.props;
     const { expanded, selected } = this.state;
-    // console.log(this.state);
-    console.log(contexts);
     let index = 0;
     return (
       <TreeView
@@ -50,11 +48,6 @@ class ControlledTreeView extends React.Component {
         onNodeToggle={this.handleToggle}
         onNodeSelect={this.handleSelect}
       >
-        {/* <TreeItem nodeId="0" label="Applications">
-          <TreeItem nodeId="1" label="Calendar" />
-          <TreeItem nodeId="2" label="Chrome" />
-          <TreeItem nodeId="3" label="Webstorm" />
-        </TreeItem> */}
         {_.map(contexts, (context, i) => {
           return (
             <TreeItem
