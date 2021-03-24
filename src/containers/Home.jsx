@@ -9,13 +9,12 @@ import {
   Toolbar,
 } from "@material-ui/core/";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
 import { STARTER_CODE } from "../constants/starterCode";
-
-import { Link } from "react-router-dom";
 
 const styles = {
   pageContainer: {
