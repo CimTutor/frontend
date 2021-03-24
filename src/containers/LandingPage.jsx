@@ -16,7 +16,6 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
-
 import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
@@ -43,8 +42,8 @@ const styles = {
   },
   titles: {
     display: "flex",
-    color:"#404040"
-  }
+    color: "#404040",
+  },
 };
 
 class LandingPage extends React.Component {
@@ -105,25 +104,33 @@ class LandingPage extends React.Component {
               direction="horizontal"
               cursor="col-resize"
             >
-              <Box style={{'width': '100%', 'height': '100%', paddingTop:'32px'}}>
+              <Box
+                style={{ width: "100%", height: "100%", paddingTop: "32px" }}
+              >
                 <CodeEditor
                   onChange={this.onChange}
                   value={code}
                   activeLine={activeLine}
                 />
-                <SystemOutput output={response.program_output} />
               </Box>
-              
-              <Box style={{'width': '100%', 'height': '100%'}}>
-                <Typography variant="h6" component="h6" className={classes.titles}>
-                    Visualization of Code
+
+              <Box style={{ width: "100%", height: "100%" }}>
+                <Typography
+                  variant="h6"
+                  component="h6"
+                  className={classes.titles}
+                >
+                  Visualization of Code
                 </Typography>
                 <RenderingContainer />
+                <SystemOutput
+                  output={response.program_output}
+                  error={response.error}
+                />
               </Box>
             </Split>
           </Box>
-        </Grid>  
-        
+        </Grid>
 
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <Box ml="4rem">
