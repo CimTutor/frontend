@@ -28,7 +28,7 @@ const styles = {
     flexGrow: 1,
     display: "flex",
     backgroundColor: "#fff",
-    height: "500px",
+    height: "50rem",
     width: "1000px",
   },
   tabs: {
@@ -89,7 +89,7 @@ class RenderingConatainer extends React.Component {
     const name = _.get(variables, `${_.get(state, "address")}`, null);
     const children = [];
     const value = _.get(state, "value", null);
-    console.log("parse Tree", state, name, _.get(state, "children", []));
+    // console.log("parse Tree", state, name, _.get(state, "children", []));
 
     _.get(state, "children", []).forEach((child) => {
       children.push(this.parseTree(child, variables));
@@ -102,7 +102,7 @@ class RenderingConatainer extends React.Component {
     const name = _.get(variables, `${_.get(state, "address")}`, null);
     const children = [];
     const value = _.get(state, "value", null);
-    console.log("parse LL", state, name, _.get(state, "children", []));
+    // console.log("parse LL", state, name, _.get(state, "children", []));
 
     _.get(state, "children", []).forEach((child) => {
       children.push(this.parseLL(child, variables));
@@ -158,10 +158,10 @@ class RenderingConatainer extends React.Component {
       `states[${this.props.render}][1]`,
       []
     );
-    console.log(states);
+    // console.log(states);
     const variables = _.get(this.props.response, `var_address`, {});
     const { res } = this.parseStates(states, variables);
-    console.log("RES", res);
+    // console.log("RES", res);
 
     return (
       <div className={classes.root}>
