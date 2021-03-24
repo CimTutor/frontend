@@ -12,6 +12,7 @@ import SearchBar from "./SearchBar";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: theme.primary,
+
   },
 }));
 
@@ -20,9 +21,9 @@ export default function AppBarWithSearch(props) {
   const { title, onSearch = () => {} } = props;
   return (
     <AppBar position="static" className={classes.appBar}>
-      <Box mt="1rem" mb="1rem" ml="2rem">
+      <Box mt="0rem" mb="0rem" ml="1rem">
         <Toolbar>
-          <Typography variant="h4" noWrap>
+          <Typography variant="h5" noWrap>
             {title}
           </Typography>
         </Toolbar>

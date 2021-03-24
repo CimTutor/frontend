@@ -16,3 +16,30 @@ code {
   position: absolute;
   background: rgba(100, 200, 100, 0.5);
 }
+
+.work-area {
+  width: 100vw;
+  height: calc(100vh - 3.75rem);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gutter {
+  height: 100%;
+  width: 2px !important;
+  margin-top: 0px !important;
+  margin-left: 5px!important ;
+  margin-right: 5px!important;
+  cursor: col-resize;
+  background-color: #A9A9A9;
+}
+
+.wrapper-card {
+  width: 100%;
+  padding: 3px;
+  height: 100%;
+  display: flex;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24); */
+}

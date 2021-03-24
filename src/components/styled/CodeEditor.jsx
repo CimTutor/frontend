@@ -31,6 +31,7 @@ class CodeEditor extends React.Component {
       <AceEditor
         mode="c_cpp"
         theme="xcode"
+        width="100%"
         onChange={onChange}
         name="UNIQUE_ID_OF_DIV"
         editorProps={{ $blockScrolling: true }}
