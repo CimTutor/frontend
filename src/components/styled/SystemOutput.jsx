@@ -27,9 +27,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SystemOutput(props) {
   const classes = useStyles();
-  const { output } = props;
+  const { output, error } = props;
 
   let output_lines_array = output ? output.split("\n") : [];
+  let error_msg = error ? <Typography variant="body1" align="left" color="error">{error}</Typography> : <div/>;
+
   const output_lines =  output_lines_array.map((line, index) => 
     <Typography key={index} variant="body1" align="left">{line}</Typography>
   );
@@ -59,6 +61,7 @@ export default function SystemOutput(props) {
         square
       >
         <Box p={1}>
+          {error_msg}
           {output_lines}
         </Box>
       </Paper>
