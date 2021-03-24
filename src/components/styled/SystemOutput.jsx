@@ -10,17 +10,17 @@ import grey from "@material-ui/core/colors/grey";
 
 const useStyles = makeStyles((theme) => ({
   titleStyles: {
+    borderTop: `2px solid #E2E2E2`,
+    borderBottom: `2px solid #E2E2E2`,
     backgroundColor: grey[100],
-    elevation: 2,
     overflow: "auto",
   },
   titleBoxBorder: {
-    border: `2px solid ${grey[300]}`
+    // border: `2px solid #E2E2E2`
   },
   outputTerminal: {
     height: theme.spacing(24),
-    backgroundColor: grey[100],
-    elevation: 2,
+    backgroundColor: '#FFFFFF',
     overflow: "auto",
   }
 }));
@@ -45,7 +45,7 @@ export default function SystemOutput(props) {
           p={1}
         >
           <Typography 
-            color="primary"
+            color="textPrimary"
             variant="subtitle1"
             align="left"
           >

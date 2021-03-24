@@ -29,10 +29,10 @@ const styles = {
     display: "flex",
     backgroundColor: "#fff",
     height: "500px",
-    width: "1000px",
+    width: "100%",
   },
   tabs: {
-    borderRight: `1px solid`,
+    border: `1px solid rgba(0, 0, 0, 0.12);`,
     // margin: "0 -4rem 0 0",
   },
 };

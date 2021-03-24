@@ -8,11 +8,14 @@ import {
   AppBar,
   Toolbar,
   IconButton,
+  Typography,
 } from "@material-ui/core/";
+import Split from "react-split";
 import { connect } from "react-redux";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
+
 
 import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
@@ -24,7 +27,8 @@ import { STARTER_CODE } from "../constants/starterCode";
 
 const styles = {
   pageContainer: {
-    padding: "8rem",
+    paddingTop: "1rem",
+    padding: "2rem",
   },
   appBar: {
     top: "auto",
@@ -37,6 +41,10 @@ const styles = {
   background: {
     backgroundColor: "#f5f5f5",
   },
+  titles: {
+    display: "flex",
+    color:"#404040"
+  }
 };
 
 class LandingPage extends React.Component {
@@ -84,23 +92,38 @@ class LandingPage extends React.Component {
       <Grid className={classes.background}>
         <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
         <Grid container className={classes.pageContainer} spacing={2}>
-          <Grid item>
-            <Box>
-              <CodeEditor
-                onChange={this.onChange}
-                value={code}
-                activeLine={activeLine}
-              />
-              <SystemOutput output={response.program_output} />
-            </Box>
-          </Grid>
-
-          <Grid item xs={4}>
-            <Box ml="4rem">
-              <RenderingContainer />
-            </Box>
-          </Grid>
-        </Grid>
+          <Box className="work-area">
+            <Split
+              className="wrapper-card"
+              sizes={[35, 65]}
+              minSize={100}
+              expandToMin={false}
+              gutterSize={10}
+              gutterAlign="center"
+              snapOffset={30}
+              dragInterval={1}
+              direction="horizontal"
+              cursor="col-resize"
+            >
+              <Box style={{'width': '100%', 'height': '100%', paddingTop:'32px'}}>
+                <CodeEditor
+                  onChange={this.onChange}
+                  value={code}
+                  activeLine={activeLine}
+                />
+                <SystemOutput output={response.program_output} />
+              </Box>
+              
+              <Box style={{'width': '100%', 'height': '100%'}}>
+                <Typography variant="h6" component="h6" className={classes.titles}>
+                    Visualization of Code
+                </Typography>
+                <RenderingContainer />
+              </Box>
+            </Split>
+          </Box>
+        </Grid>  
+        
 
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <Box ml="4rem">
