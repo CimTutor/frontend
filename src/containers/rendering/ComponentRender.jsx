@@ -15,6 +15,17 @@ const styles = {
   pageContainer: {
     padding: "4rem",
   },
+  variable_names: {
+    display: 'inline', 
+    padding: '10px',
+    align:"left" 
+  },
+  variables_grid: {
+    paddingTop: '10px'
+  },
+  variable_grid: {
+    textAlign: 'left'
+  }
 };
 
 class ComponentRender extends React.Component {
@@ -31,15 +42,20 @@ class ComponentRender extends React.Component {
       let variables = _.get(data, 'data', [])
         .map(variable => {
           if (_.get(variable, 'values', undefined)) {
-            return (<Grid item xs={12} style={{'text-align': 'left'}}>
-              <Typography key={variable.name} variant="body1" align="left" style={{'display': 'inline', 'padding': '10px'}}>{variable.type} {variable.name}:</Typography>
+            console.log("Values: " + _.get(variable, 'values', []))
+            return (<Grid item xs={12} className={classes.variable_grid}>
+              <Typography key={variable.name} variant="body1" className={classes.variable_names}>
+                {variable.type} {variable.name}:
+              </Typography>
               <ButtonGroup color="primary" aria-label="outlined primary button group">
-                {_.get(variable, 'values', []).map(index => (<Button key={index}>{index}</Button>))}
+                {_.get(variable, 'values', []).map((index, i) => (<Button key={variable.name + "-" + i}>{index}</Button>))}
               </ButtonGroup>
             </Grid>)
           } else {
-            return (<Grid item xs={12} style={{'text-align': 'left'}}>
-              <Typography key={variable.name} variant="body1" align="left" style={{'display': 'inline', 'padding': '10px'}}>{variable.type} {variable.name}:</Typography>
+            return (<Grid item xs={12} className={classes.variable_grid}>
+              <Typography key={variable.name} variant="body1" className={classes.variable_names}>
+                {variable.type} {variable.name}:
+              </Typography>
               <Button variant="outlined" color="primary">
                 {variable.value}
               </Button>
@@ -48,7 +64,7 @@ class ComponentRender extends React.Component {
         });
 
       render_object = (<div className={classes.root}>
-        <Grid container spacing={3} style={{'paddingTop': '10px'}}>
+        <Grid container spacing={3} className={classes.variables_grid}>
           {variables}
         </Grid>
         </div>)
