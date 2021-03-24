@@ -19,8 +19,9 @@ import * as renderActions from "../../redux/actions/render";
 import ComponentRender from "./ComponentRender";
 
 const RENDER_TYPES = {
-  LinkedListNode: "LinkedListNode",
+  LinkedListNode: "LLNode",
   TreeNode: "TreeNode",
+  Arrays: /\[([\d]+)\]/g,
 };
 
 const styles = {
@@ -111,6 +112,15 @@ class RenderingConatainer extends React.Component {
     return { name, attributes: { value }, children };
   };
 
+  parseArray = (state, variables) => {
+    const name = _.get(variables, `${_.get(state, "address")}`, null);
+    const values = _.get(state, "values", null);
+    console.log("parse Array", values, name);
+
+    return { name, values: values , type: _.get(state, "variable_type")};
+  };
+
+
   parseStates = (states, variables) => {
     console.log("PARSE STATES", states);
     let res = [];
@@ -119,14 +129,16 @@ class RenderingConatainer extends React.Component {
       const context_states = _.get(value, "states", {});
       context_states.forEach((state) => {
         const varT = _.get(state, "variable_type");
-        // const state = _.get(c_state, "states", {});
 
-        if (varT === RENDER_TYPES.LinkedListNode) {
+        if (varT.includes(RENDER_TYPES.LinkedListNode)) {
           const s = this.parseLL(_.get(state, "states", {}), variables);
           res.push(s);
-        } else if (varT === RENDER_TYPES.TreeNode) {
+        } else if (varT.includes(RENDER_TYPES.TreeNode)) {
           const s = this.parseTree(_.get(state, "states", {}), variables);
           res.push(s);
+        } else if (_.get(state, "values", undefined)) {
+          const s = this.parseArray(state, variables);
+          var_nodes.push(s);
         } else {
           if (_.get(state, "name") !== undefined) {
             var_nodes.push({
