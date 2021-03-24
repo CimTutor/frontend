@@ -23,7 +23,7 @@ export const parseTree = (state, variables) => {
   // console.log("parse Tree", state, name, _.get(state, "children", []));
 
   _.get(state, "children", []).forEach((child) => {
-    children.push(this.parseTree(child, variables));
+    children.push(parseTree(child, variables));
   });
 
   return { name, attributes: { value }, children };
@@ -36,14 +36,14 @@ export const parseLL = (state, variables) => {
   // console.log("parse LL", state, name, _.get(state, "children", []));
 
   _.get(state, "children", []).forEach((child) => {
-    children.push(this.parseLL(child, variables));
+    children.push(parseLL(child, variables));
   });
 
   return { name, attributes: { value }, children };
 };
 
 export const parseStates = (states, variables) => {
-  console.log("PARSE STATES", states);
+  // console.log("PARSE STATES", states);
   let res = [];
   let var_nodes = [];
   states.forEach((value) => {
@@ -53,10 +53,10 @@ export const parseStates = (states, variables) => {
       // const state = _.get(c_state, "states", {});
 
       if (varT === RENDER_TYPES.LinkedListNode) {
-        const s = this.parseLL(_.get(state, "states", {}), variables);
+        const s = parseLL(_.get(state, "states", {}), variables);
         res.push(s);
       } else if (varT === RENDER_TYPES.TreeNode) {
-        const s = this.parseTree(_.get(state, "states", {}), variables);
+        const s = parseTree(_.get(state, "states", {}), variables);
         res.push(s);
       } else {
         if (_.get(state, "name") !== undefined) {
@@ -75,4 +75,22 @@ export const parseStates = (states, variables) => {
   }
 
   return { res };
+};
+
+export const parseStatesForMenu = (states, variables) => {
+  // console.log("PARSE STATES MENU", states);
+  let contexts = [];
+  states.forEach((value) => {
+    const contextStates = _.get(value, "states", {});
+    const contextName = _.get(value, "context", {});
+    const contextVariables = [];
+    contextStates.forEach((state) => {
+      contextVariables.push(_.get(state, "name", ""));
+    });
+    if (contextVariables.length !== 0) {
+      contexts.push({ context: contextName, variables: contextVariables });
+    }
+  });
+
+  return { contexts };
 };

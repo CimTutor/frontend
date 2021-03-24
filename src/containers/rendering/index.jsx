@@ -12,12 +12,11 @@ import {
 } from "@material-ui/core/";
 import { connect } from "react-redux";
 
-// import TreeRender, { RenderTree } from "./TreeRender";
-import Tree from "react-d3-tree";
 import * as codeActions from "../../redux/actions/code";
 import * as renderActions from "../../redux/actions/render";
 import ComponentRender from "./ComponentRender";
 import * as utils from "../../util/util";
+import ControlledTreeView from "./TreeTab";
 
 export const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -47,6 +46,9 @@ const styles = {
     borderRight: `1px solid`,
     // margin: "0 -4rem 0 0",
   },
+  treeTab: {
+    width: "6rem",
+  },
 };
 
 class RenderingConatainer extends React.Component {
@@ -74,6 +76,11 @@ class RenderingConatainer extends React.Component {
     this.setState({ tab: value });
   };
 
+  handleTreeClick = (value) => {
+    console.log("clicked on", value);
+    this.setState({ tab: value });
+  };
+
   render() {
     const { classes, response } = this.props;
     const { tab } = this.state;
@@ -82,9 +89,11 @@ class RenderingConatainer extends React.Component {
       `states[${this.props.render}][1]`,
       []
     );
-    // console.log(states);
+    // console.log(this.state);
     const variables = _.get(this.props.response, `var_address`, {});
     const { res } = utils.parseStates(states, variables);
+    const { contexts } = utils.parseStatesForMenu(states, variables);
+    console.log(contexts);
     // console.log("RES", res);
 
     return (
@@ -97,11 +106,19 @@ class RenderingConatainer extends React.Component {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          {_.map(res, (v, i) => {
+          {/* {_.map(res, (v, i) => {
             return (
               <Tab key={i} label={v.name || v.type} {...utils.a11yProps(i)} />
             );
-          })}
+          })} */}
+          <Box style={{ width: "180px" }}>
+            <ControlledTreeView
+              //   className={classes.treeTab}
+              handleTreeClick={this.handleTreeClick}
+              res={res}
+              contexts={contexts}
+            />
+          </Box>
         </Tabs>
         {_.map(res, (v, i) => {
           return (

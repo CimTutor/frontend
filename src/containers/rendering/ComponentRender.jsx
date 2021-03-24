@@ -42,7 +42,6 @@ class ComponentRender extends React.Component {
     const { classes, data } = this.props;
     const nodeSize = { x: 150, y: 200 };
     const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
-    console.log(data);
 
     return (
       <div id="treeWrapper" style={{ width: "50em", height: "50em" }}>
