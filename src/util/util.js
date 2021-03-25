@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 const RENDER_TYPES = {
-  LinkedListNode: "LinkedList",
+  LinkedListNode: "LLNode",
   TreeNode: "TreeNode",
   Arrays: /\[([\d]+)\]/g,
 };
