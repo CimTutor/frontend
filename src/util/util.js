@@ -47,16 +47,14 @@ const parseArray = (state, variables) => {
   return { name, values: values, type: _.get(state, "variable_type") };
 };
 
-// const parseStruct = (state, variable) => {
-//   const name = _.get(variables, `${_.get(state, "address")}`, null);
-//   const fields = _.get(state, "fields", []);
-//   const rf = _.map(fields, (field) => {
-//     return { field: _.get(field, "Field") };
-//   });
-//   console.log("parse Array", values, name);
-
-//   return { name, values: values, type: _.get(state, "variable_type") };
-// };
+const parseStruct = (state, variables) => {
+  const name = _.get(state, "name", "");
+  const fields = _.get(state, "fields", []);
+  const rf = _.map(fields, (field) => {
+    return { field: _.get(field, "Field"), value: _.get(field, "Value") };
+  });
+  return { name, values: rf, type: "STRUCT" };
+};
 
 // Need to parse states with relation to context
 export const parseStates = (states, variables) => {
@@ -68,7 +66,7 @@ export const parseStates = (states, variables) => {
     const context_var_nodes = [];
 
     context_states.forEach((state) => {
-      const varT = _.get(state, "variable_type");
+      const varT = _.get(state, "variable_type", "");
 
       if (varT.includes(RENDER_TYPES.LinkedListNode)) {
         const s = parseLL(_.get(state, "states", {}), variables);
@@ -80,9 +78,8 @@ export const parseStates = (states, variables) => {
         const s = parseArray(state, variables);
         context_var_nodes.push(s);
       } else if (_.get(state, "fields", undefined) !== undefined) {
-        // console.log("STRUCTS", state);
-        const s = parseArray(state, variables);
-        context_var_nodes.push(s);
+        const s = parseStruct(state, variables);
+        res.push(s);
       } else {
         if (_.get(state, "name") !== undefined) {
           context_var_nodes.push({
@@ -99,13 +96,12 @@ export const parseStates = (states, variables) => {
     }
   });
 
-  // console.log("PARSED RES", res);
+  console.log("PARSED RES", res);
 
   return { res };
 };
 
 export const parseStatesForMenu = (states, res) => {
-  console.log("PARSE STATES MENU", states, res);
   let contexts = [];
   // dogshit code, idgaf anymore
 

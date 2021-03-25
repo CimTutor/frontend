@@ -8,8 +8,9 @@ import {
   Paper,
   ButtonGroup,
   Typography,
+  Card,
+  CardContent,
 } from "@material-ui/core/";
-import { connect } from "react-redux";
 
 import Tree from "react-d3-tree";
 
@@ -34,6 +35,12 @@ const styles = {
   },
   variable_grid: {
     textAlign: "left",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
   },
 };
 
@@ -66,7 +73,7 @@ class ComponentRender extends React.Component {
     // console.log("DATA:" + JSON.stringify(data));
 
     let render_object = "";
-    if (data.type == "VARIABLES") {
+    if (_.get(data, "type") === "VARIABLES") {
       let variables = _.get(data, "data", []).map((variable, i) => {
         if (_.get(variable, "values", undefined)) {
           // console.log("Values: " + _.get(variable, "values", []));
@@ -113,6 +120,29 @@ class ComponentRender extends React.Component {
             {variables}
           </Grid>
         </div>
+      );
+    } else if (_.get(data, "type") == "STRUCT") {
+      return (
+        <Grid item xs={12} className={classes.variable_grid}>
+          <Card className={classes.root}>
+            <CardContent>
+              <Typography
+                className={classes.title}
+                color="textSecondary"
+                gutterBottom
+              >
+                {_.get(data, "name", "")}
+              </Typography>
+              {_.map(_.get(data, "values"), (f) => {
+                return (
+                  <Typography className={classes.pos} color="textSecondary">
+                    {_.get(f, "field") + " : " + _.get(f, "value")}
+                  </Typography>
+                );
+              })}
+            </CardContent>
+          </Card>
+        </Grid>
       );
     } else {
       render_object = (
