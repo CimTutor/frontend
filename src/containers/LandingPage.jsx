@@ -48,6 +48,13 @@ const styles = {
 
 class LandingPage extends React.Component {
   componentDidMount() {
+    let key = window.location.href
+      .split("http://localhost:3000/LandingPage/")
+      .join("");
+    if (key !== "") {
+      const { getCodeToShare } = this.props;
+      getCodeToShare(key);
+    }
     this.props.updateCodeValue(STARTER_CODE);
   }
 
@@ -59,6 +66,15 @@ class LandingPage extends React.Component {
     const { sendCodeToCompile, code } = this.props;
     sendCodeToCompile(code);
     this.props.updateRenderState(0);
+  };
+
+  onClick = () => {
+    const { sendCodeToShare, code } = this.props;
+    const r =
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
+    alert("Here is you're link!" + " http://localhost:3000/LandingPage/" + r);
+    sendCodeToShare(r, code);
   };
 
   onLeft = () => {
@@ -164,6 +180,15 @@ class LandingPage extends React.Component {
                   onClick={this.onSubmit}
                 >
                   Submit Code
+                </Button>
+              </Box>
+              <Box ml="4rem">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={this.onClick}
+                >
+                  Share Code
                 </Button>
               </Box>
             </Toolbar>
