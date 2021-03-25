@@ -4,7 +4,7 @@ import qs from "qs";
 
 // TODO: Change this to point to our host
 // const baseUrl = "https://cimtutor.herokuapp.com";
-const baseUrl = "http://localhost:4000";
+const baseUrl = "http://localhost:5000";
 
 const parseResponse = (response) => {
   const data = _.get(response, "data", {});
@@ -20,7 +20,7 @@ export const request = (method) => (query, options = {}) => {
     options.params = options.data;
   }
 
-  console.log("Method: " + method)
+  console.log("Method: " + method);
   return axios({
     method,
     url: `${baseUrl}/${query}`,
