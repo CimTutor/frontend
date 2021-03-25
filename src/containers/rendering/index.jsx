@@ -90,7 +90,7 @@ class RenderingConatainer extends React.Component {
     );
     const variables = _.get(this.props.response, `var_address`, {});
     const { res } = utils.parseStates(states, variables);
-    const { contexts } = utils.parseStatesForMenu(states, variables);
+    const { contexts } = utils.parseStatesForMenu(states, res);
 
     return (
       <div className={classes.root}>

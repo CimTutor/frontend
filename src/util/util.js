@@ -14,14 +14,12 @@ export const a11yProps = (index) => {
 };
 
 export const parseTree = (state, variables) => {
-  // TODO: make sure we show right and left, handle null children
   if (state === null) {
     return {};
   }
   const name = _.get(variables, `${_.get(state, "address")}`, null);
   const children = [];
   const value = _.get(state, "value", null);
-  // console.log("parse Tree", state, name, _.get(state, "children", []));
 
   _.get(state, "children", []).forEach((child) => {
     children.push(parseTree(child, variables));
@@ -34,7 +32,6 @@ export const parseLL = (state, variables) => {
   const name = _.get(variables, `${_.get(state, "address")}`, null);
   const children = [];
   const value = _.get(state, "value", null);
-  // console.log("parse LL", state, name, _.get(state, "children", []));
 
   _.get(state, "children", []).forEach((child) => {
     children.push(parseLL(child, variables));
@@ -46,17 +43,30 @@ export const parseLL = (state, variables) => {
 const parseArray = (state, variables) => {
   const name = _.get(variables, `${_.get(state, "address")}`, null);
   const values = _.get(state, "values", null);
-  console.log("parse Array", values, name);
 
   return { name, values: values, type: _.get(state, "variable_type") };
 };
 
+// const parseStruct = (state, variable) => {
+//   const name = _.get(variables, `${_.get(state, "address")}`, null);
+//   const fields = _.get(state, "fields", []);
+//   const rf = _.map(fields, (field) => {
+//     return { field: _.get(field, "Field") };
+//   });
+//   console.log("parse Array", values, name);
+
+//   return { name, values: values, type: _.get(state, "variable_type") };
+// };
+
+// Need to parse states with relation to context
 export const parseStates = (states, variables) => {
-  // console.log("PARSE STATES", states);
   let res = [];
   let var_nodes = [];
+
   states.forEach((value) => {
     const context_states = _.get(value, "states", {});
+    const context_var_nodes = [];
+
     context_states.forEach((state) => {
       const varT = _.get(state, "variable_type");
 
@@ -68,10 +78,14 @@ export const parseStates = (states, variables) => {
         res.push(s);
       } else if (_.get(state, "values", undefined)) {
         const s = parseArray(state, variables);
-        var_nodes.push(s);
+        context_var_nodes.push(s);
+      } else if (_.get(state, "fields", undefined) !== undefined) {
+        // console.log("STRUCTS", state);
+        const s = parseArray(state, variables);
+        context_var_nodes.push(s);
       } else {
         if (_.get(state, "name") !== undefined) {
-          var_nodes.push({
+          context_var_nodes.push({
             name: _.get(state, "name"),
             type: _.get(state, "variable_type"),
             value: _.get(state, "value"),
@@ -79,26 +93,40 @@ export const parseStates = (states, variables) => {
         }
       }
     });
+
+    if (context_var_nodes.length !== 0) {
+      res.push({ type: "VARIABLES", data: context_var_nodes });
+    }
   });
 
-  if (var_nodes.length !== 0) {
-    res.push({ type: "VARIABLES", data: var_nodes });
-  }
+  // console.log("PARSED RES", res);
 
   return { res };
 };
 
-export const parseStatesForMenu = (states, variables) => {
-  // console.log("PARSE STATES MENU", states);
+export const parseStatesForMenu = (states, res) => {
+  console.log("PARSE STATES MENU", states, res);
   let contexts = [];
+  // dogshit code, idgaf anymore
+
   states.forEach((value) => {
     const contextStates = _.get(value, "states", {});
     const contextName = _.get(value, "context", {});
     const contextVariables = [];
-    contextStates.forEach((state) => {
-      contextVariables.push(_.get(state, "name", ""));
-    });
-    if (contextVariables.length !== 0) {
+    if (contextStates.length !== 0) {
+      let v = false;
+      contextStates.forEach((state) => {
+        if (_.get(state, "value") || _.get(state, "values")) {
+          v = true;
+        } else {
+          contextVariables.push(_.get(state, "name"));
+        }
+      });
+
+      if (v) {
+        contextVariables.push("Variables");
+      }
+
       contexts.push({ context: contextName, variables: contextVariables });
     }
   });

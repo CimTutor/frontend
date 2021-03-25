@@ -63,15 +63,15 @@ class ComponentRender extends React.Component {
     const nodeSize = { x: 150, y: 200 };
     const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
 
-    console.log("DATA:" + JSON.stringify(data));
+    // console.log("DATA:" + JSON.stringify(data));
 
     let render_object = "";
     if (data.type == "VARIABLES") {
-      let variables = _.get(data, "data", []).map((variable) => {
+      let variables = _.get(data, "data", []).map((variable, i) => {
         if (_.get(variable, "values", undefined)) {
-          console.log("Values: " + _.get(variable, "values", []));
+          // console.log("Values: " + _.get(variable, "values", []));
           return (
-            <Grid item xs={12} className={classes.variable_grid}>
+            <Grid key={i} item xs={12} className={classes.variable_grid}>
               <Typography
                 key={variable.name}
                 variant="body1"

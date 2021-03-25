@@ -20,6 +20,9 @@ int main() {
     StringTreeNode *strTreeNode2 = new StringTreeNode("String Node 2");
     StringTreeNode *strTreeNode3 = new StringTreeNode("String Node 3");
 
+    int nums[5] = {1,2,3,4,5};
+    int i = 0;
+
     strTreeNode2->left(strTreeNode3);
     intTreeNode1->left(strTreeNode1);
     intTreeNode1->right(intTreeNode2);
