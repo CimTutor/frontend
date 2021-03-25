@@ -11,6 +11,7 @@ const styles = {
     height: 216,
     flexGrow: 1,
     maxWidth: 400,
+    minWidth: 200,
   },
 };
 

@@ -18,7 +18,7 @@ import ComponentRender from "./ComponentRender";
 import * as utils from "../../util/util";
 import ControlledTreeView from "./TreeTab";
 
-export const TabPanel = (props) => {
+function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -32,7 +32,7 @@ export const TabPanel = (props) => {
       {value === index && <Box>{children}</Box>}
     </div>
   );
-};
+}
 
 const styles = {
   root: {
@@ -102,7 +102,9 @@ class RenderingConatainer extends React.Component {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          <Box style={{ width: "180px" }}>
+          <Box
+            style={{ width: "200px", textAlign: "left", overflow: "hidden" }}
+          >
             <ControlledTreeView
               handleTreeClick={this.handleTreeClick}
               res={res}

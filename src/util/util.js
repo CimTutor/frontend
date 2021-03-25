@@ -1,8 +1,9 @@
 import _ from "lodash";
 
 const RENDER_TYPES = {
-  LinkedListNode: "LinkedListNode",
+  LinkedListNode: "LinkedList",
   TreeNode: "TreeNode",
+  Arrays: /\[([\d]+)\]/g,
 };
 
 export const a11yProps = (index) => {
@@ -42,6 +43,14 @@ export const parseLL = (state, variables) => {
   return { name, attributes: { value }, children };
 };
 
+const parseArray = (state, variables) => {
+  const name = _.get(variables, `${_.get(state, "address")}`, null);
+  const values = _.get(state, "values", null);
+  console.log("parse Array", values, name);
+
+  return { name, values: values, type: _.get(state, "variable_type") };
+};
+
 export const parseStates = (states, variables) => {
   // console.log("PARSE STATES", states);
   let res = [];
@@ -50,14 +59,16 @@ export const parseStates = (states, variables) => {
     const context_states = _.get(value, "states", {});
     context_states.forEach((state) => {
       const varT = _.get(state, "variable_type");
-      // const state = _.get(c_state, "states", {});
 
-      if (varT === RENDER_TYPES.LinkedListNode) {
+      if (varT.includes(RENDER_TYPES.LinkedListNode)) {
         const s = parseLL(_.get(state, "states", {}), variables);
         res.push(s);
-      } else if (varT === RENDER_TYPES.TreeNode) {
+      } else if (varT.includes(RENDER_TYPES.TreeNode)) {
         const s = parseTree(_.get(state, "states", {}), variables);
         res.push(s);
+      } else if (_.get(state, "values", undefined)) {
+        const s = parseArray(state, variables);
+        var_nodes.push(s);
       } else {
         if (_.get(state, "name") !== undefined) {
           var_nodes.push({
