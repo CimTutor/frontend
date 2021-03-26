@@ -28,7 +28,6 @@ import markdown from "../constants/readme"
 import Prism from "prismjs"; //css for Prism is imported in ThemeSelector
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
-import "../prism.css";
 import * as marked from "marked";
 
 const styles = {
