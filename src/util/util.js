@@ -43,7 +43,6 @@ export const parseLL = (state, variables) => {
 const parseArray = (state, variables) => {
   const name = _.get(variables, `${_.get(state, "address")}`, null);
   const values = _.get(state, "values", null);
-  console.log("Pointers: " + _.get(state, "pointers", []))
   const pointers =   _.get(state, "pointers", []).map(element => 
     element.map(pointer => _.get(variables, pointer, null))
   );

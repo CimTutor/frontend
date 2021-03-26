@@ -53,8 +53,12 @@ class MyFuckingVariables extends React.Component {
               {_.get(variable, "values", []).map((index, i) => {
                 if (_.get(variable, "values", []).length === pointers.length && (pointers[i].length > 0)) {
                   let pointer_names = "";
-                  pointers[i].forEach(pointer_name => {
-                    pointer_names += pointer_name + " "
+                  pointers[i].forEach((pointer_name, ptr_idx) => {
+                    if (ptr_idx < pointers[i].length - 1) {
+                      pointer_names += pointer_name + ",  "
+                    } else {
+                      pointer_names += pointer_name
+                    }
                   });
 
                   return (
