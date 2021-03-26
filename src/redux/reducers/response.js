@@ -1,7 +1,7 @@
 import _ from "lodash";
 import actionTypes from "../actionTypes";
-
-const responseReducer = ($$state = {}, action) => {
+import defaultResponse from "../../constants/sampleResponse"
+const responseReducer = ($$state = defaultResponse, action) => {
   const { type, payload } = action;
   switch (type) {
     case actionTypes.response.UPDATE:

@@ -26,6 +26,14 @@ code {
   justify-content: center;
 }
 
+.sample-area {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .gutter {
   height: 100%;
   width: 2px !important;

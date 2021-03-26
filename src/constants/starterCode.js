@@ -5,13 +5,6 @@ export const STARTER_CODE = `// This Test Script is for injection for array algo
 
 using namespace std;
 
-void printIntegers() {
-    int y  = 69;
-    for(int i = 0; i < 5; i++) {
-        cout << i << endl;
-    }
-}
-
 int main() {
     //Add your code here
     IntegerTreeNode *intTreeNode1= new IntegerTreeNode(1);
@@ -27,8 +20,6 @@ int main() {
     intTreeNode1->left(strTreeNode1);
     intTreeNode1->right(intTreeNode2);
     strTreeNode1->left(strTreeNode2);
-
-    printIntegers();
 
     IntegerLLNode *intNode = new IntegerLLNode(5);
     StringLLNode *stringNode = new StringLLNode("123123123");
