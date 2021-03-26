@@ -28,7 +28,8 @@ class MyFuckingVariables extends React.Component {
   }
 
   getRenderComponent = (data, classes) => {
-    _.get(data, "data", []).map((variable, i) => {
+    console.log("GET RENDER", data);
+    let res = _.get(data, "data", []).map((variable, i) => {
       if (_.get(variable, "values", undefined)) {
         return (
           <Grid key={i} item xs={12} className={classes.variable_grid}>
@@ -66,11 +67,15 @@ class MyFuckingVariables extends React.Component {
         );
       }
     });
+
+    return res;
   };
 
   render() {
     const { classes, data } = this.props;
     const variables = this.getRenderComponent(data, classes);
+
+    console.log(variables);
 
     return (
       <div className={classes.root}>
