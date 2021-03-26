@@ -95,6 +95,19 @@ class LandingPage extends React.Component {
             </>
           </Grid>
         </Grid>
+        <AppBar
+          position="fixed"
+          color="primary"
+          className={classes.appBar}
+        >
+          <Box justifyContent="center">
+            <Toolbar>
+                <Link to="/LandingPage" style={{ textDecoration: 'none' }}>
+                  <Button variant="contained" color="secondary"> Let's Start!</Button> 
+                </Link>
+            </Toolbar>
+          </Box>
+        </AppBar>
       </Grid>
     );
   }

@@ -9,6 +9,7 @@ import {
   Toolbar,
   IconButton,
   Typography,
+  Drawer
 } from "@material-ui/core/";
 import Split from "react-split";
 import { connect } from "react-redux";
@@ -23,6 +24,12 @@ import CodeEditor from "../components/styled/CodeEditor";
 import SystemOutput from "../components/styled/SystemOutput";
 import RenderingContainer from "./rendering";
 import { STARTER_CODE } from "../constants/starterCode";
+import markdown from "../constants/readme"
+import Prism from "prismjs"; //css for Prism is imported in ThemeSelector
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import "../prism.css";
+import * as marked from "marked";
 
 const styles = {
   pageContainer: {
@@ -47,6 +54,8 @@ const styles = {
 };
 
 class LandingPage extends React.Component {
+  state = { drawerOpen: false, markdown: marked(markdown)};
+  
   componentDidMount() {
     let key = window.location.href
       .split("http://localhost:3000/LandingPage/")
@@ -77,6 +86,11 @@ class LandingPage extends React.Component {
     sendCodeToShare(r, code);
   };
 
+  onClick = () => {
+    const { drawerOpen } = this.state;
+    this.setState({drawerOpen: !drawerOpen});
+  };
+
   onLeft = () => {
     this.props.updateRenderState(Math.max(this.props.render - 1, 0));
   };
@@ -102,99 +116,118 @@ class LandingPage extends React.Component {
 
     let currentState = _.get(response, `states[${render}]`, null);
     let activeLine = null || (currentState && currentState[0]);
+    const { drawerOpen, markdown } = this.state;
 
     return (
-      <Grid className={classes.background}>
-        <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
-        <Grid container className={classes.pageContainer} spacing={2}>
-          <Box className="work-area">
-            <Split
-              className="wrapper-card"
-              sizes={[35, 65]}
-              minSize={100}
-              expandToMin={false}
-              gutterSize={10}
-              gutterAlign="center"
-              snapOffset={30}
-              dragInterval={1}
-              direction="horizontal"
-              cursor="col-resize"
-            >
-              <Box
-                style={{ width: "100%", height: "100%", paddingTop: "32px" }}
-              >
-                <CodeEditor
-                  onChange={this.onChange}
-                  value={code}
-                  activeLine={activeLine}
-                />
-              </Box>
-
-              <Box style={{ width: "100%", height: "100%" }}>
-                <Typography
-                  variant="h6"
-                  component="h6"
-                  className={classes.titles}
-                >
-                  Visualization of Code
-                </Typography>
-                <RenderingContainer />
-                <SystemOutput
-                  output={response.program_output}
-                  error={response.error}
-                />
-              </Box>
-            </Split>
+      <React.Fragment>
+        <Drawer anchor={"right"} open={drawerOpen} onClose={this.onClick}>
+          <Box
+            dangerouslySetInnerHTML={{ __html: markdown }}
+            marginLeft="30px"
+            marginRight="30px">
           </Box>
+        </Drawer>
+        <Grid className={classes.background}>
+          <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
+          <Grid container className={classes.pageContainer} spacing={2}>
+            <Box className="work-area">
+              <Split
+                className="wrapper-card"
+                sizes={[35, 65]}
+                minSize={100}
+                expandToMin={false}
+                gutterSize={10}
+                gutterAlign="center"
+                snapOffset={30}
+                dragInterval={1}
+                direction="horizontal"
+                cursor="col-resize"
+              >
+                <Box
+                  style={{ width: "100%", height: "100%", paddingTop: "32px" }}
+                >
+                  <CodeEditor
+                    onChange={this.onChange}
+                    value={code}
+                    activeLine={activeLine}
+                  />
+                </Box>
+
+                <Box style={{ width: "100%", height: "100%" }}>
+                  <Typography
+                    variant="h6"
+                    component="h6"
+                    className={classes.titles}
+                  >
+                    Visualization of Code
+                  </Typography>
+                  <RenderingContainer />
+                  <SystemOutput
+                    output={response.program_output}
+                    error={response.error}
+                  />
+                </Box>
+              </Split>
+            </Box>
+          </Grid>
+
+          <AppBar position="fixed" color="primary" className={classes.appBar}>
+            <Box ml="4rem">
+              <Toolbar>
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                  className={classes.flip}
+                  onClick={this.onDoubleLeft}
+                >
+                  <DoubleArrowIcon />
+                </IconButton>
+                <IconButton onClick={this.onLeft} edge="end" color="inherit">
+                  <ChevronLeftIcon />
+                </IconButton>
+                <IconButton onClick={this.onRight} edge="end" color="inherit">
+                  <ChevronRightIcon />
+                </IconButton>
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                  onClick={this.onDoubleRight}
+                >
+                  <DoubleArrowIcon />
+                </IconButton>
+
+                <Box ml="4rem">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={this.onSubmit}
+                  >
+                    Submit Code
+                  </Button>
+                </Box>
+                <Box ml="4rem">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={this.onClick}
+                  >
+                    Share Code
+                  </Button>
+                </Box>
+                <Box ml="4rem">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={this.onClick}
+                  >
+                    How to Use
+                  </Button>
+                </Box>
+              </Toolbar>
+            </Box>
+          </AppBar>
         </Grid>
-
-        <AppBar position="fixed" color="primary" className={classes.appBar}>
-          <Box ml="4rem">
-            <Toolbar>
-              <IconButton
-                edge="end"
-                color="inherit"
-                className={classes.flip}
-                onClick={this.onDoubleLeft}
-              >
-                <DoubleArrowIcon />
-              </IconButton>
-              <IconButton onClick={this.onLeft} edge="end" color="inherit">
-                <ChevronLeftIcon />
-              </IconButton>
-              <IconButton onClick={this.onRight} edge="end" color="inherit">
-                <ChevronRightIcon />
-              </IconButton>
-              <IconButton
-                edge="end"
-                color="inherit"
-                onClick={this.onDoubleRight}
-              >
-                <DoubleArrowIcon />
-              </IconButton>
-
-              <Box ml="4rem">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={this.onSubmit}
-                >
-                  Submit Code
-                </Button>
-              </Box>
-              <Box ml="4rem">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={this.onClick}
-                >
-                  Share Code
-                </Button>
-              </Box>
-            </Toolbar>
-          </Box>
-        </AppBar>
-      </Grid>
+      </React.Fragment>
     );
   }
 }
