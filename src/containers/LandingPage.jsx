@@ -76,7 +76,7 @@ class LandingPage extends React.Component {
     this.props.updateRenderState(0);
   };
 
-  onClick = () => {
+  onShare= () => {
     const { sendCodeToShare, code } = this.props;
     const r =
       Math.random().toString(36).substring(2, 15) +
@@ -208,7 +208,7 @@ class LandingPage extends React.Component {
                   <Button
                     variant="contained"
                     color="secondary"
-                    onClick={this.onClick}
+                    onClick={this.onShare}
                   >
                     Share Code
                   </Button>
