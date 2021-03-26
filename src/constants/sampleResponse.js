@@ -1,14 +1,14 @@
 export default {
   "custom_data_types": {},
   "error": "",
-  "program_output": "0\n1\n2\n3\n4\n",
+  "program_output": "",
   "states": [
       [
-          15,
+          8,
           []
       ],
       [
-          17,
+          10,
           [
               {
                   "context": "main",
@@ -17,7 +17,7 @@ export default {
           ]
       ],
       [
-          18,
+          11,
           [
               {
                   "context": "main",
@@ -34,6 +34,360 @@ export default {
                               "direction": "Root",
                               "parent_address": "(nil)",
                               "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          12,
+          [
+              {
+                  "context": "main",
+                  "states": [
+                      {
+                          "address": "0x623c20",
+                          "name": "intTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          13,
+          [
+              {
+                  "context": "main",
+                  "states": [
+                      {
+                          "address": "0x623c20",
+                          "name": "intTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x624090",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x624090",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          14,
+          [
+              {
+                  "context": "main",
+                  "states": [
+                      {
+                          "address": "0x623c20",
+                          "name": "intTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x624090",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x624090",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x6240e0",
+                          "name": "strTreeNode2",
+                          "states": {
+                              "address": "0x6240e0",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 2"
+                          },
+                          "variable_type": "StringTreeNode"
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          16,
+          [
+              {
+                  "context": "main",
+                  "states": [
+                      {
+                          "address": "0x623c20",
+                          "name": "intTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x624090",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x624090",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x6240e0",
+                          "name": "strTreeNode2",
+                          "states": {
+                              "address": "0x6240e0",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 2"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x624130",
+                          "name": "strTreeNode3",
+                          "states": {
+                              "address": "0x624130",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 3"
+                          },
+                          "variable_type": "StringTreeNode"
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          17,
+          [
+              {
+                  "context": "main",
+                  "states": [
+                      {
+                          "address": "0x623c20",
+                          "name": "intTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x624090",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x624090",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x6240e0",
+                          "name": "strTreeNode2",
+                          "states": {
+                              "address": "0x6240e0",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 2"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
+                      },
+                      {
+                          "address": "0x624130",
+                          "name": "strTreeNode3",
+                          "states": {
+                              "address": "0x624130",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 3"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
                           },
                           "variable_type": "IntegerTreeNode"
                       }
@@ -48,21 +402,6 @@ export default {
                   "context": "main",
                   "states": [
                       {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
                           "address": "0x623c20",
                           "name": "intTreeNode1",
                           "states": {
@@ -74,6 +413,91 @@ export default {
                               "direction": "Root",
                               "parent_address": "(nil)",
                               "value": "1"
+                          },
+                          "variable_type": "IntegerTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
+                          "address": "0x624090",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x624090",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x6240e0",
+                          "name": "strTreeNode2",
+                          "states": {
+                              "address": "0x6240e0",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 2"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
+                      },
+                      {
+                          "address": "0x624130",
+                          "name": "strTreeNode3",
+                          "states": {
+                              "address": "0x624130",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 3"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
                           },
                           "variable_type": "IntegerTreeNode"
                       }
@@ -88,21 +512,6 @@ export default {
                   "context": "main",
                   "states": [
                       {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
                           "address": "0x623c20",
                           "name": "intTreeNode1",
                           "states": {
@@ -118,6 +527,12 @@ export default {
                           "variable_type": "IntegerTreeNode"
                       },
                       {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
                           "address": "0x624090",
                           "name": "strTreeNode1",
                           "states": {
@@ -131,6 +546,64 @@ export default {
                               "value": "String Node 1"
                           },
                           "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x6240e0",
+                          "name": "strTreeNode3",
+                          "states": {
+                              "address": "0x6240e0",
+                              "children": [
+                                  {
+                                      "address": "0x624130",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x6240e0",
+                                      "value": "String Node 3"
+                                  },
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 2"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
+                      },
+                      {
+                          "address": "0x624060",
+                          "name": "intTreeNode2",
+                          "states": {
+                              "address": "0x624060",
+                              "children": [
+                                  null,
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "2"
+                          },
+                          "variable_type": "IntegerTreeNode"
                       }
                   ]
               }
@@ -143,6 +616,79 @@ export default {
                   "context": "main",
                   "states": [
                       {
+                          "address": "0x623c20",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  {
+                                      "address": "0x624090",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x623c20",
+                                      "value": "String Node 1"
+                                  },
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
+                          "address": "0x6240e0",
+                          "name": "strTreeNode3",
+                          "states": {
+                              "address": "0x6240e0",
+                              "children": [
+                                  {
+                                      "address": "0x624130",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x6240e0",
+                                      "value": "String Node 3"
+                                  },
+                                  null
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "String Node 2"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
+                      },
+                      {
                           "address": "0x624060",
                           "name": "intTreeNode2",
                           "states": {
@@ -156,85 +702,43 @@ export default {
                               "value": "2"
                           },
                           "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "intTreeNode1",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x6240e0",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x6240e0",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 2"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x624090",
-                          "name": "strTreeNode1",
-                          "states": {
-                              "address": "0x624090",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 1"
-                          },
-                          "variable_type": "StringTreeNode"
                       }
                   ]
               }
           ]
       ],
       [
-          23,
+          22,
           [
               {
                   "context": "main",
                   "states": [
-                      {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
                       {
                           "address": "0x623c20",
                           "name": "intTreeNode1",
                           "states": {
                               "address": "0x623c20",
                               "children": [
-                                  null,
-                                  null
+                                  {
+                                      "address": "0x624090",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x623c20",
+                                      "value": "String Node 1"
+                                  },
+                                  {
+                                      "address": "0x624060",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Right",
+                                      "parent_address": "0x623c20",
+                                      "value": "2"
+                                  }
                               ],
                               "direction": "Root",
                               "parent_address": "(nil)",
@@ -243,12 +747,27 @@ export default {
                           "variable_type": "IntegerTreeNode"
                       },
                       {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
                           "address": "0x6240e0",
-                          "name": "strTreeNode2",
+                          "name": "strTreeNode3",
                           "states": {
                               "address": "0x6240e0",
                               "children": [
-                                  null,
+                                  {
+                                      "address": "0x624130",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x6240e0",
+                                      "value": "String Node 3"
+                                  },
                                   null
                               ],
                               "direction": "Root",
@@ -258,34 +777,23 @@ export default {
                           "variable_type": "StringTreeNode"
                       },
                       {
-                          "address": "0x624090",
-                          "name": "strTreeNode1",
-                          "states": {
-                              "address": "0x624090",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x624130",
-                          "name": "strTreeNode3",
-                          "states": {
-                              "address": "0x624130",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 3"
-                          },
-                          "variable_type": "StringTreeNode"
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
                       }
                   ]
               }
@@ -298,6 +806,63 @@ export default {
                   "context": "main",
                   "states": [
                       {
+                          "address": "0x623c20",
+                          "name": "strTreeNode1",
+                          "states": {
+                              "address": "0x623c20",
+                              "children": [
+                                  {
+                                      "address": "0x624090",
+                                      "children": [
+                                          {
+                                              "address": "0x6240e0",
+                                              "children": [
+                                                  {
+                                                      "address": "0x624130",
+                                                      "children": [
+                                                          null,
+                                                          null
+                                                      ],
+                                                      "direction": "Left",
+                                                      "parent_address": "0x6240e0",
+                                                      "value": "String Node 3"
+                                                  },
+                                                  null
+                                              ],
+                                              "direction": "Left",
+                                              "parent_address": "0x624090",
+                                              "value": "String Node 2"
+                                          },
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x623c20",
+                                      "value": "String Node 1"
+                                  },
+                                  {
+                                      "address": "0x624060",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Right",
+                                      "parent_address": "0x623c20",
+                                      "value": "2"
+                                  }
+                              ],
+                              "direction": "Root",
+                              "parent_address": "(nil)",
+                              "value": "1"
+                          },
+                          "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
                           "address": "0x7fffffffeb90",
                           "name": "nums",
                           "pointers": [
@@ -315,81 +880,103 @@ export default {
                               "5"
                           ],
                           "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x624090",
-                          "name": "strTreeNode1",
-                          "states": {
-                              "address": "0x624090",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x6240e0",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x6240e0",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 2"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          25,
+          [
+              {
+                  "context": "main",
+                  "states": [
                       {
                           "address": "0x623c20",
-                          "name": "intTreeNode1",
+                          "name": "strTreeNode1",
                           "states": {
                               "address": "0x623c20",
                               "children": [
-                                  null,
-                                  null
+                                  {
+                                      "address": "0x624090",
+                                      "children": [
+                                          {
+                                              "address": "0x6240e0",
+                                              "children": [
+                                                  {
+                                                      "address": "0x624130",
+                                                      "children": [
+                                                          null,
+                                                          null
+                                                      ],
+                                                      "direction": "Left",
+                                                      "parent_address": "0x6240e0",
+                                                      "value": "String Node 3"
+                                                  },
+                                                  null
+                                              ],
+                                              "direction": "Left",
+                                              "parent_address": "0x624090",
+                                              "value": "String Node 2"
+                                          },
+                                          null
+                                      ],
+                                      "direction": "Left",
+                                      "parent_address": "0x623c20",
+                                      "value": "String Node 1"
+                                  },
+                                  {
+                                      "address": "0x624060",
+                                      "children": [
+                                          null,
+                                          null
+                                      ],
+                                      "direction": "Right",
+                                      "parent_address": "0x623c20",
+                                      "value": "2"
+                                  }
                               ],
                               "direction": "Root",
                               "parent_address": "(nil)",
                               "value": "1"
                           },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x624130",
-                          "name": "strTreeNode3",
-                          "states": {
-                              "address": "0x624130",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 3"
-                          },
                           "variable_type": "StringTreeNode"
+                      },
+                      {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
+                          "address": "0x624180",
+                          "name": "intNode",
+                          "states": {
+                              "address": "0x624180",
+                              "children": [],
+                              "next_address": "(nil)",
+                              "value": "5"
+                          },
+                          "variable_type": "IntegerLLNode"
+                      },
+                      {
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
                       }
                   ]
               }
@@ -402,438 +989,9 @@ export default {
                   "context": "main",
                   "states": [
                       {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x624090",
+                          "address": "0x623c20",
                           "name": "strTreeNode1",
                           "states": {
-                              "address": "0x624090",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x6240e0",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x6240e0",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 2"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "intTreeNode1",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x624130",
-                          "name": "strTreeNode3",
-                          "states": {
-                              "address": "0x624130",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 3"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          27,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x624090",
-                          "name": "strTreeNode1",
-                          "states": {
-                              "address": "0x624090",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x6240e0",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x6240e0",
-                              "children": [
-                                  {
-                                      "address": "0x624130",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x6240e0",
-                                      "value": "String Node 3"
-                                  },
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 2"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "intTreeNode1",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          28,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x6240e0",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x6240e0",
-                              "children": [
-                                  {
-                                      "address": "0x624130",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x6240e0",
-                                      "value": "String Node 3"
-                                  },
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 2"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "intTreeNode1",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      },
-                      {
-                          "address": "0x624060",
-                          "name": "intTreeNode2",
-                          "states": {
-                              "address": "0x624060",
-                              "children": [
-                                  null,
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "2"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          29,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x6240e0",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x6240e0",
-                              "children": [
-                                  {
-                                      "address": "0x624130",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x6240e0",
-                                      "value": "String Node 3"
-                                  },
-                                  null
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "String Node 2"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "intTreeNode1",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "IntegerTreeNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          31,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
                               "address": "0x623c20",
                               "children": [
                                   {
@@ -880,1432 +1038,12 @@ export default {
                               "value": "1"
                           },
                           "variable_type": "StringTreeNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          9,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
                       },
                       {
                           "address": "0x7fffffffea84",
                           "name": "i",
                           "value": "0",
                           "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": []
-              }
-          ]
-      ],
-      [
-          10,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "y",
-                          "value": "69",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          11,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          10,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          11,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "1",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          10,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "1",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          11,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "2",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          10,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "2",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          11,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "3",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          10,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "3",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          11,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "4",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          10,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "4",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          13,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              },
-              {
-                  "context": "printIntegers",
-                  "states": [
-                      {
-                          "address": "0x7fffffffea64",
-                          "name": "i",
-                          "value": "4",
-                          "variable_type": "int\r"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          33,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          34,
-          [
-              {
-                  "context": "main",
-                  "states": [
-                      {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
                       },
                       {
                           "address": "0x624180",
@@ -2317,17 +1055,7 @@ export default {
                               "value": "5"
                           },
                           "variable_type": "IntegerLLNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          35,
-          [
-              {
-                  "context": "main",
-                  "states": [
+                      },
                       {
                           "address": "0x7fffffffeb90",
                           "name": "nums",
@@ -2357,16 +1085,20 @@ export default {
                               "value": "123123123"
                           },
                           "variable_type": "StringLLNode"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          28,
+          [
+              {
+                  "context": "main",
+                  "states": [
                       {
                           "address": "0x623c20",
-                          "name": "strTreeNode2",
+                          "name": "strTreeNode1",
                           "states": {
                               "address": "0x623c20",
                               "children": [
@@ -2416,26 +1148,29 @@ export default {
                           "variable_type": "StringTreeNode"
                       },
                       {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
                           "address": "0x624180",
-                          "name": "intNode",
+                          "name": "stringNode",
                           "states": {
                               "address": "0x624180",
-                              "children": [],
-                              "next_address": "(nil)",
+                              "children": [
+                                  {
+                                      "address": "0x6241b0",
+                                      "children": [],
+                                      "next_address": "(nil)",
+                                      "value": "123123123"
+                                  }
+                              ],
+                              "next_address": "0x6241b0",
                               "value": "5"
                           },
-                          "variable_type": "IntegerLLNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          37,
-          [
-              {
-                  "context": "main",
-                  "states": [
+                          "variable_type": "StringLLNode"
+                      },
                       {
                           "address": "0x7fffffffeb90",
                           "name": "nums",
@@ -2454,16 +1189,20 @@ export default {
                               "5"
                           ],
                           "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
+                      }
+                  ]
+              }
+          ]
+      ],
+      [
+          29,
+          [
+              {
+                  "context": "main",
+                  "states": [
                       {
                           "address": "0x623c20",
-                          "name": "strTreeNode2",
+                          "name": "strTreeNode1",
                           "states": {
                               "address": "0x623c20",
                               "children": [
@@ -2513,8 +1252,14 @@ export default {
                           "variable_type": "StringTreeNode"
                       },
                       {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
                           "address": "0x624180",
-                          "name": "intNode",
+                          "name": "stringNode",
                           "states": {
                               "address": "0x624180",
                               "children": [
@@ -2528,18 +1273,8 @@ export default {
                               "next_address": "0x6241b0",
                               "value": "5"
                           },
-                          "variable_type": "IntegerLLNode"
-                      }
-                  ]
-              }
-          ]
-      ],
-      [
-          38,
-          [
-              {
-                  "context": "main",
-                  "states": [
+                          "variable_type": "StringLLNode"
+                      },
                       {
                           "address": "0x7fffffffeb90",
                           "name": "nums",
@@ -2558,81 +1293,6 @@ export default {
                               "5"
                           ],
                           "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
-                          "address": "0x623c20",
-                          "name": "strTreeNode2",
-                          "states": {
-                              "address": "0x623c20",
-                              "children": [
-                                  {
-                                      "address": "0x624090",
-                                      "children": [
-                                          {
-                                              "address": "0x6240e0",
-                                              "children": [
-                                                  {
-                                                      "address": "0x624130",
-                                                      "children": [
-                                                          null,
-                                                          null
-                                                      ],
-                                                      "direction": "Left",
-                                                      "parent_address": "0x6240e0",
-                                                      "value": "String Node 3"
-                                                  },
-                                                  null
-                                              ],
-                                              "direction": "Left",
-                                              "parent_address": "0x624090",
-                                              "value": "String Node 2"
-                                          },
-                                          null
-                                      ],
-                                      "direction": "Left",
-                                      "parent_address": "0x623c20",
-                                      "value": "String Node 1"
-                                  },
-                                  {
-                                      "address": "0x624060",
-                                      "children": [
-                                          null,
-                                          null
-                                      ],
-                                      "direction": "Right",
-                                      "parent_address": "0x623c20",
-                                      "value": "2"
-                                  }
-                              ],
-                              "direction": "Root",
-                              "parent_address": "(nil)",
-                              "value": "1"
-                          },
-                          "variable_type": "StringTreeNode"
-                      },
-                      {
-                          "address": "0x624180",
-                          "name": "intNode",
-                          "states": {
-                              "address": "0x624180",
-                              "children": [
-                                  {
-                                      "address": "0x6241b0",
-                                      "children": [],
-                                      "next_address": "(nil)",
-                                      "value": "123123123"
-                                  }
-                              ],
-                              "next_address": "0x6241b0",
-                              "value": "5"
-                          },
-                          "variable_type": "IntegerLLNode"
                       }
                   ]
               }
@@ -2645,33 +1305,8 @@ export default {
                   "context": "main",
                   "states": [
                       {
-                          "address": "0x7fffffffeb90",
-                          "name": "nums",
-                          "pointers": [
-                              [],
-                              [],
-                              [],
-                              [],
-                              []
-                          ],
-                          "values": [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5"
-                          ],
-                          "variable_type": "int [5]\r"
-                      },
-                      {
-                          "address": "0x7fffffffea84",
-                          "name": "i",
-                          "value": "0",
-                          "variable_type": "int\r"
-                      },
-                      {
                           "address": "0x623c20",
-                          "name": "strTreeNode2",
+                          "name": "strTreeNode1",
                           "states": {
                               "address": "0x623c20",
                               "children": [
@@ -2721,8 +1356,14 @@ export default {
                           "variable_type": "StringTreeNode"
                       },
                       {
+                          "address": "0x7fffffffea84",
+                          "name": "i",
+                          "value": "0",
+                          "variable_type": "int\r"
+                      },
+                      {
                           "address": "0x624180",
-                          "name": "intNode",
+                          "name": "stringNode",
                           "states": {
                               "address": "0x624180",
                               "children": [
@@ -2736,7 +1377,26 @@ export default {
                               "next_address": "0x6241b0",
                               "value": "5"
                           },
-                          "variable_type": "IntegerLLNode"
+                          "variable_type": "StringLLNode"
+                      },
+                      {
+                          "address": "0x7fffffffeb90",
+                          "name": "nums",
+                          "pointers": [
+                              [],
+                              [],
+                              [],
+                              [],
+                              []
+                          ],
+                          "values": [
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                          ],
+                          "variable_type": "int [5]\r"
                       }
                   ]
               },
@@ -2756,7 +1416,6 @@ export default {
       "0x624130": "strTreeNode3",
       "0x624180": "intNode",
       "0x6241b0": "stringNode",
-      "0x7fffffffea64": "y",
       "0x7fffffffea84": "i",
       "0x7fffffffeb90": "nums"
   }
