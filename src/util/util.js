@@ -101,7 +101,7 @@ export const parseStates = (states, variables) => {
   return { res };
 };
 
-export const parseStatesForMenu = (states, res) => {
+export const parseStatesForMenu = (states, variables) => {
   let contexts = [];
   // dogshit code, idgaf anymore
 
@@ -115,7 +115,9 @@ export const parseStatesForMenu = (states, res) => {
         if (_.get(state, "value") || _.get(state, "values")) {
           v = true;
         } else {
-          contextVariables.push(_.get(state, "name"));
+          contextVariables.push(
+            _.get(variables, `${_.get(state, "address")}`, null)
+          );
         }
       });
 
