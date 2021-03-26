@@ -156,7 +156,7 @@ class LandingPage extends React.Component {
           ></Box>
         </Drawer>
         <Grid className={classes.background}>
-          <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
+          <StyledTopAppBar title="CimTutor" onSearch={this.onSearch} />
           <Grid container className={classes.pageContainer} spacing={2}>
             <Box className="work-area">
               <Split

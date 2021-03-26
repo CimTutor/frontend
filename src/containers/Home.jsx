@@ -72,8 +72,6 @@ class LandingPage extends React.Component {
     const { classes, code, response, render } = this.props;
     let currentState = _.get(response, `states[${render}]`, null);
     let activeLine = null || (currentState && currentState[0]);
-    console.log(this.props);
-    console.log(currentState)
     return (
       <Grid>
         <StyledTopAppBar title="CimTutor" onSearch={this.onSearch} />
@@ -120,7 +118,6 @@ class LandingPage extends React.Component {
             </>
           </Grid>
           <Grid item>
-           
               <Card variant="outlined">
                 <CardContent>
                   <Box className="sample-area">
