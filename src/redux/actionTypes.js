@@ -13,6 +13,7 @@ const actions = [
   ["code", []],
   ["response", []],
   ["render", []],
+  ["loading", []],
 ];
 
 export default _.chain(actions)

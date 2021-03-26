@@ -10,27 +10,29 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Drawer
+  Drawer,
+  CircularProgress,
 } from "@material-ui/core/";
-import Alert from '@material-ui/lab/Alert';
+import Alert from "@material-ui/lab/Alert";
 import Split from "react-split";
 import { connect } from "react-redux";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
+import Prism from "prismjs"; //css for Prism is imported in ThemeSelector
+import "prismjs/components/prism-c";
+import "prismjs/components/prism-cpp";
+import * as marked from "marked";
 
 import StyledTopAppBar from "../components/styled/AppBar";
 import * as codeActions from "../redux/actions/code";
 import * as renderActions from "../redux/actions/render";
+import * as loadingActions from "../redux/actions/loading";
 import CodeEditor from "../components/styled/CodeEditor";
 import SystemOutput from "../components/styled/SystemOutput";
 import RenderingContainer from "./rendering";
 import { STARTER_CODE } from "../constants/starterCode";
-import markdown from "../constants/readme"
-import Prism from "prismjs"; //css for Prism is imported in ThemeSelector
-import 'prismjs/components/prism-c';
-import 'prismjs/components/prism-cpp';
-import * as marked from "marked";
+import markdown from "../constants/readme";
 
 const styles = {
   pageContainer: {
@@ -52,11 +54,23 @@ const styles = {
     display: "flex",
     color: "#404040",
   },
+  wrapper: {
+    margin: "0 2rem 0 4rem",
+    position: "relative",
+  },
+  buttonProgress: {
+    color: "#fff",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    marginTop: -12,
+    marginLeft: -12,
+  },
 };
 
 class LandingPage extends React.Component {
-  state = { drawerOpen: false, markdown: marked(markdown), alertOpen:false};
-  
+  state = { drawerOpen: false, markdown: marked(markdown), alertOpen: false };
+
   componentDidMount() {
     let key = window.location.href
       .split("http://localhost:3000/LandingPage/")
@@ -73,25 +87,31 @@ class LandingPage extends React.Component {
   };
 
   onSubmit = () => {
-    const { sendCodeToCompile, code } = this.props;
+    const {
+      sendCodeToCompile,
+      updateRenderState,
+      code,
+      updateLoadingState,
+    } = this.props;
+    updateLoadingState(true);
     sendCodeToCompile(code);
-    this.props.updateRenderState(0);
+    updateRenderState(0);
   };
 
-  onShare= () => {
+  onShare = () => {
     const { sendCodeToShare, code } = this.props;
     const r =
       Math.random().toString(36).substring(2, 15) +
       Math.random().toString(36).substring(2, 15);
-      navigator.clipboard.writeText("http://localhost:3000/LandingPage/" + r)
+    navigator.clipboard.writeText("http://localhost:3000/LandingPage/" + r);
     const { alertOpen } = this.state;
-    this.setState({alertOpen: !alertOpen});
+    this.setState({ alertOpen: !alertOpen });
     sendCodeToShare(r, code);
   };
 
   onClick = () => {
     const { drawerOpen } = this.state;
-    this.setState({drawerOpen: !drawerOpen});
+    this.setState({ drawerOpen: !drawerOpen });
   };
 
   onLeft = () => {
@@ -115,7 +135,7 @@ class LandingPage extends React.Component {
   };
 
   render() {
-    const { classes, code, response, render } = this.props;
+    const { classes, code, response, render, loading } = this.props;
 
     let currentState = _.get(response, `states[${render}]`, null);
     let activeLine = null || (currentState && currentState[0]);
@@ -124,14 +144,16 @@ class LandingPage extends React.Component {
     return (
       <React.Fragment>
         <Collapse in={alertOpen}>
-          <Alert open={alertOpen} onClose={this.onShare}>Your link is copied to your clipboard!</Alert>
+          <Alert open={alertOpen} onClose={this.onShare}>
+            Your link is copied to your clipboard!
+          </Alert>
         </Collapse>
         <Drawer anchor={"right"} open={drawerOpen} onClose={this.onClick}>
           <Box
             dangerouslySetInnerHTML={{ __html: markdown }}
             marginLeft="30px"
-            marginRight="30px">
-          </Box>
+            marginRight="30px"
+          ></Box>
         </Drawer>
         <Grid className={classes.background}>
           <StyledTopAppBar title="Cim Tutor" onSearch={this.onSearch} />
@@ -202,14 +224,21 @@ class LandingPage extends React.Component {
                   <DoubleArrowIcon />
                 </IconButton>
 
-                <Box ml="4rem">
+                <Box className={classes.wrapper} ml="4rem">
                   <Button
                     variant="contained"
                     color="secondary"
                     onClick={this.onSubmit}
+                    disabled={loading}
                   >
                     Submit Code
                   </Button>
+                  {loading && (
+                    <CircularProgress
+                      size={24}
+                      className={classes.buttonProgress}
+                    />
+                  )}
                 </Box>
                 <Box ml="4rem">
                   <Button
@@ -239,7 +268,10 @@ class LandingPage extends React.Component {
 }
 
 const StyledLandingPage = withStyles(styles)(LandingPage);
-const select = ($$state) => _.pick($$state, ["code", "response", "render"]);
-export default connect(select, { ...codeActions, ...renderActions })(
-  StyledLandingPage
-);
+const select = ($$state) =>
+  _.pick($$state, ["code", "response", "render", "loading"]);
+export default connect(select, {
+  ...codeActions,
+  ...renderActions,
+  ...loadingActions,
+})(StyledLandingPage);

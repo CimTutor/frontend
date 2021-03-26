@@ -1,5 +1,6 @@
 import actionTypes from "../actionTypes";
 import request from "../../util/request";
+import * as loadingActions from "./loading";
 
 export const sendCodeToCompile = (code) => {
   return function (dispatch) {
@@ -7,6 +8,10 @@ export const sendCodeToCompile = (code) => {
       .post("processCode", { data: { code: code } })
       .then((data) => {
         console.log(data);
+        dispatch({
+          type: actionTypes.loading.UPDATE,
+          payload: false,
+        });
         dispatch({
           type: actionTypes.response.UPDATE,
           payload: data,
@@ -24,7 +29,7 @@ export const sendCodeToCompile = (code) => {
 export const sendCodeToShare = (key, code) => {
   return function (dispatch) {
     request
-      .post("write", { data: { key: key,code: code } })
+      .post("write", { data: { key: key, code: code } })
       .then((data) => {
         dispatch({
           type: actionTypes.response.UPDATE,
