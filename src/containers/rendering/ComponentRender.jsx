@@ -16,7 +16,7 @@ class ComponentRender extends React.Component {
 
     if (_.get(data, "type") === "VARIABLES") {
       render_object = <Variables data={data} />;
-    } else if (_.get(data, "type") == "STRUCT") {
+    } else if (_.get(data, "type") === "STRUCT") {
       return <Struct data={data} />;
     } else {
       render_object = <Tree data={data} />;
