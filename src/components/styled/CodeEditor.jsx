@@ -15,7 +15,7 @@ class CodeEditor extends React.Component {
   }
 
   render() {
-    const { value, onChange, activeLine } = this.props;
+    const { value, onChange, activeLine, readOnly } = this.props;
     let markers = [];
     markers.push(
       activeLine
@@ -37,6 +37,7 @@ class CodeEditor extends React.Component {
         editorProps={{ $blockScrolling: true }}
         value={value}
         markers={markers}
+        readOnly={readOnly}
       />
     );
   }

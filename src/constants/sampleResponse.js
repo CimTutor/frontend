@@ -1,4 +1,4 @@
-{
+export default {
   "custom_data_types": {},
   "error": "",
   "program_output": "0\n1\n2\n3\n4\n",
