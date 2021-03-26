@@ -49,9 +49,18 @@ class LandingPage extends React.Component {
         <Grid container justify="center" spacing={2}>
           <Grid item>
             <>
-              <Box className={classes.pageContainer}>
-                <Box>
-                  As the world becomes more digitized, software development has
+              <Box className={classes.pageContainer}
+              display="flex" 
+              justifyContent="center"
+              >
+                <Box
+                border={1}
+                padding="10px"
+                width= "60%"
+                fontSize = "20px"
+                lineHeight = "1.6"
+                >
+                  <p>As the world becomes more digitized, software development has
                   become increasingly popular. More individuals are starting to
                   learn how to program, however they face a steep learning curve
                   at the early stage of their learning process. The goal of
@@ -68,7 +77,7 @@ class LandingPage extends React.Component {
                   results will then be sent to the frontend of the application
                   for visualization. The main advantage of CimTutor is that it
                   is able to correlate algorithms and their corresponding data
-                  structures visually and present them more intuitively
+                  structures visually and present them more intuitively</p>
                 </Box>
               </Box>
               <AppBar
@@ -76,9 +85,12 @@ class LandingPage extends React.Component {
                 color="primary"
                 className={classes.appBar}
               >
-                <Box ml="43rem">
+                <Box 
+                  display="flex" 
+                  justifyContent="center"
+                >
                   <Toolbar>
-                    <Box ml="4rem">
+                    <Box>
                       <Link
                         to="/LandingPage"
                         style={{ textDecoration: "none" }}
@@ -95,6 +107,19 @@ class LandingPage extends React.Component {
             </>
           </Grid>
         </Grid>
+        <AppBar
+          position="fixed"
+          color="primary"
+          className={classes.appBar}
+        >
+          <Box justifyContent="center">
+            <Toolbar>
+                <Link to="/LandingPage" style={{ textDecoration: 'none' }}>
+                  <Button variant="contained" color="secondary"> Let's Start!</Button> 
+                </Link>
+            </Toolbar>
+          </Box>
+        </AppBar>
       </Grid>
     );
   }
