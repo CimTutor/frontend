@@ -1,11 +1,21 @@
 import actionTypes from "../actionTypes";
 import request from "../../util/request";
 import * as loadingActions from "./loading";
+import sha256 from 'crypto-js/sha256';
 
 export const sendCodeToCompile = (code) => {
+  const salt = "63479AD69A090B258277EC8FBA6F99419A2FFB248981510657C944CCD1148E97";
+  const pword = "3C469E9D6C5875D37A43F353D4F88E61FCF812C66EEE3457465A40B0DA4153E0";
+  const token = sha256(salt + pword).toString();
+
   return function (dispatch) {
     request
-      .post("processCode", { data: { code: code } })
+      .post("processCode", { 
+        data: { 
+          code: code,
+          token: token 
+        },
+      })
       .then((data) => {
         console.log(data);
         dispatch({
