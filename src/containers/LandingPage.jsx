@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import {
+  Collapse,
   Grid,
   withStyles,
   Box,
@@ -11,6 +12,7 @@ import {
   Typography,
   Drawer
 } from "@material-ui/core/";
+import Alert from '@material-ui/lab/Alert';
 import Split from "react-split";
 import { connect } from "react-redux";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -53,7 +55,7 @@ const styles = {
 };
 
 class LandingPage extends React.Component {
-  state = { drawerOpen: false, markdown: marked(markdown)};
+  state = { drawerOpen: false, markdown: marked(markdown), alertOpen:false};
   
   componentDidMount() {
     let key = window.location.href
@@ -76,12 +78,14 @@ class LandingPage extends React.Component {
     this.props.updateRenderState(0);
   };
 
-  onClick = () => {
+  onShare= () => {
     const { sendCodeToShare, code } = this.props;
     const r =
       Math.random().toString(36).substring(2, 15) +
       Math.random().toString(36).substring(2, 15);
-    alert("Here is you're link!" + " http://localhost:3000/LandingPage/" + r);
+      navigator.clipboard.writeText("http://localhost:3000/LandingPage/" + r)
+    const { alertOpen } = this.state;
+    this.setState({alertOpen: !alertOpen});
     sendCodeToShare(r, code);
   };
 
@@ -115,10 +119,13 @@ class LandingPage extends React.Component {
 
     let currentState = _.get(response, `states[${render}]`, null);
     let activeLine = null || (currentState && currentState[0]);
-    const { drawerOpen, markdown } = this.state;
+    const { drawerOpen, markdown, alertOpen } = this.state;
 
     return (
       <React.Fragment>
+        <Collapse in={alertOpen}>
+          <Alert open={alertOpen} onClose={this.onShare}>Your link is copied to your clipboard!</Alert>
+        </Collapse>
         <Drawer anchor={"right"} open={drawerOpen} onClose={this.onClick}>
           <Box
             dangerouslySetInnerHTML={{ __html: markdown }}
@@ -208,7 +215,7 @@ class LandingPage extends React.Component {
                   <Button
                     variant="contained"
                     color="secondary"
-                    onClick={this.onClick}
+                    onClick={this.onShare}
                   >
                     Share Code
                   </Button>

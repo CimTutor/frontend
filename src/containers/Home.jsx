@@ -80,30 +80,6 @@ class LandingPage extends React.Component {
                   structures visually and present them more intuitively</p>
                 </Box>
               </Box>
-              <AppBar
-                position="fixed"
-                color="primary"
-                className={classes.appBar}
-              >
-                <Box 
-                  display="flex" 
-                  justifyContent="center"
-                >
-                  <Toolbar>
-                    <Box>
-                      <Link
-                        to="/LandingPage"
-                        style={{ textDecoration: "none" }}
-                      >
-                        <Button variant="contained" color="secondary">
-                          {" "}
-                          Let's Start!
-                        </Button>
-                      </Link>
-                    </Box>
-                  </Toolbar>
-                </Box>
-              </AppBar>
             </>
           </Grid>
         </Grid>
@@ -112,7 +88,7 @@ class LandingPage extends React.Component {
           color="primary"
           className={classes.appBar}
         >
-          <Box justifyContent="center">
+          <Box display="flex" justifyContent="center">
             <Toolbar>
                 <Link to="/LandingPage" style={{ textDecoration: 'none' }}>
                   <Button variant="contained" color="secondary"> Let's Start!</Button> 

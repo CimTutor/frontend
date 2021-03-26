@@ -3,8 +3,6 @@ import axios from "axios";
 import qs from "qs";
 
 // TODO: Change this to point to our host
-// const baseUrl = "https://cimtutor.herokuapp.com";
-const baseUrl = "http://localhost:5000";
 
 const parseResponse = (response) => {
   const data = _.get(response, "data", {});
@@ -18,6 +16,12 @@ const parseResponse = (response) => {
 export const request = (method) => (query, options = {}) => {
   if (method === "GET" && !_.isEmpty(options.data)) {
     options.params = options.data;
+  }
+
+  let baseUrl = "http://f19ce617e5a1.ngrok.io";  
+
+  if (query==="write" || query==="read"){
+    baseUrl = "https://cimtutor.herokuapp.com";
   }
 
   console.log("Method: " + method);
