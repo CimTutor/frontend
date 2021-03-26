@@ -18,7 +18,7 @@ export const request = (method) => (query, options = {}) => {
     options.params = options.data;
   }
 
-  let baseUrl = "http://localhost:5000";
+  let baseUrl = "https://7bf09b41eff7.ngrok.io/";
 
   if (query === "write" || query === "read") {
     baseUrl = "https://cimtutor.herokuapp.com";
