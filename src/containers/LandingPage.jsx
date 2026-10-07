@@ -72,9 +72,8 @@ class LandingPage extends React.Component {
   state = { drawerOpen: false, markdown: marked(markdown), alertOpen: false };
 
   componentDidMount() {
-    let key = window.location.href
-      .split("http://localhost:3000/LandingPage/")
-      .join("");
+    // Derive the share key from the path so it works on any host, not just localhost:3000
+    let key = window.location.pathname.replace(/^\/LandingPage\/?/, "");
     if (key !== "") {
       const { getCodeToShare } = this.props;
       getCodeToShare(key);
@@ -103,7 +102,7 @@ class LandingPage extends React.Component {
     const r =
       Math.random().toString(36).substring(2, 15) +
       Math.random().toString(36).substring(2, 15);
-    navigator.clipboard.writeText("http://localhost:3000/LandingPage/" + r);
+    navigator.clipboard.writeText(`${window.location.origin}/LandingPage/${r}`);
     const { alertOpen } = this.state;
     this.setState({ alertOpen: !alertOpen });
     sendCodeToShare(r, code);
