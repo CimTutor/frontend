@@ -18,10 +18,13 @@ export const request = (method) => (query, options = {}) => {
     options.params = options.data;
   }
 
-  let baseUrl = "https://7bf09b41eff7.ngrok.io/";
+  // Override per environment with REACT_APP_API_URL / REACT_APP_SHARE_API_URL (see .env.example)
+  let baseUrl =
+    process.env.REACT_APP_API_URL || "https://7bf09b41eff7.ngrok.io/";
 
   if (query === "write" || query === "read") {
-    baseUrl = "https://cimtutor.herokuapp.com";
+    baseUrl =
+      process.env.REACT_APP_SHARE_API_URL || "https://cimtutor.herokuapp.com";
   }
 
   console.log("Method: " + method);
